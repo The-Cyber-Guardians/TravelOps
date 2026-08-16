@@ -204,7 +204,7 @@ Tenant Isolation باید با تست‌های API بررسی شود (به‌و�
 
 ## ۸. تقسیم کار
 
-### عضو A
+### عضو Parsa
 
 * Accounts
 * Organization
@@ -212,7 +212,7 @@ Tenant Isolation باید با تست‌های API بررسی شود (به‌و�
 * Permission
 * Docker / CI
 
-### عضو B
+### عضو Mani
 
 * Tour
 * Destination
@@ -221,7 +221,7 @@ Tenant Isolation باید با تست‌های API بررسی شود (به‌و�
 * Transportation
 * TourGuide
 
-### عضو C
+### عضو Ilya
 
 * Customer
 * Reservation
