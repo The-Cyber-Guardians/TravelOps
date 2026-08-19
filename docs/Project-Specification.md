@@ -160,7 +160,7 @@ Tenant Isolation must be verified through API tests.
 
 ## 8. Team Responsibilities
 
-### Member A
+### Member Parsa
 
 * Accounts
 * Organization
@@ -168,7 +168,7 @@ Tenant Isolation must be verified through API tests.
 * Permissions
 * Docker / CI
 
-### Member B
+### Member Mani
 
 * Tours
 * Destinations
@@ -177,7 +177,7 @@ Tenant Isolation must be verified through API tests.
 * Transportation
 * Tour Guides
 
-### Member C
+### Member Ilya
 
 * Customers
 * Reservations
