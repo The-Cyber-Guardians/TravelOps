@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TravelOps — تور بعدی‌ات را از میان آژانس‌های معتبر پیدا کن</title>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"></noscript>
+<style>
+:root{
+  --white:#FFFFFF; --bg-soft:#F4F9FF;
+  --sky-50:#EAF4FE; --sky-100:#D3E8FC; --sky-200:#A8CEF6;
+  --brand-500:#1E80E3; --brand-600:#1567C0; --brand-700:#0E4E96;
+  --navy-900:#0A2440; --navy-700:#1A3B60; --slate-500:#5B7186; --slate-400:#8397A9;
+  --line:#E4EDF6; --line-strong:#C7D5E2;
+  --amber-500:#F5A524; --success:#12A150; --danger:#E0484D;
+  --sh-sm:0 1px 3px rgba(10,36,64,.06);
+  --sh-md:0 8px 24px rgba(10,36,64,.08);
+  --sh-lg:0 20px 48px rgba(10,36,64,.12);
+  --sh-xl:0 32px 64px rgba(10,36,64,.16);
+  --r-card:20px; --r-ctl:12px; --r-img:16px;
+  --cw:1280px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--white);color:var(--slate-500);
+  font:400 16px/1.9 Vazirmatn,Tahoma,sans-serif;
+  overflow-x:hidden;
+}
+h1,h2,h3,p{margin:0}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font:inherit}
+a{color:var(--brand-500);text-decoration:none}
+a:hover{color:var(--brand-600)}
+:focus-visible{outline:2px solid var(--brand-500);outline-offset:2px;border-radius:6px}
+.wrap{max-width:var(--cw);margin:0 auto;padding-inline:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ─── header ─── */
+.hdr{position:fixed;inset-block-start:0;inset-inline:0;z-index:60;transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+.hdr-in{max-width:var(--cw);margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;flex:none;color:var(--white);transition:color .3s ease}
+.brand svg{flex:none}
+.brand b{font:700 20px/1 Vazirmatn,Tahoma,sans-serif;letter-spacing:-.01em}
+.nav{display:flex;align-items:center;gap:4px;margin-inline-start:16px}
+.nav a{position:relative;padding:8px 12px;font-size:15px;color:rgba(255,255,255,.88);transition:color .2s ease}
+.nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:12px;inset-inline-end:12px;height:2px;background:currentColor;border-radius:2px;transform:scaleX(0);transform-origin:100% 50%;transition:transform .25s ease}
+.nav a:hover::after,.nav a[aria-current]::after{transform:scaleX(1)}
+.hdr-sp{flex:1}
+.hsearch{display:none;align-items:center;gap:8px;width:min(300px,32vw);padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--white);box-shadow:var(--sh-sm);color:var(--slate-400);font-size:14px;text-align:start;cursor:pointer}
+.hsearch:hover{border-color:var(--sky-200)}
+.hact{display:flex;align-items:center;gap:8px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r-ctl);font-weight:500;font-size:15px;line-height:1;padding:12px 20px;min-height:44px;transition:background .18s ease,color .18s ease,transform .18s ease,box-shadow .2s ease;cursor:pointer}
+.btn-p{background:var(--brand-500);color:var(--white);box-shadow:0 6px 16px rgba(30,128,227,.24)}
+.btn-p:hover{background:var(--brand-600);color:var(--white)}
+.btn-p:active{background:var(--brand-700);transform:translateY(1px)}
+.btn-w{background:var(--white);color:var(--brand-700)}
+.btn-w:hover{background:var(--sky-50);color:var(--brand-700)}
+.btn-g{color:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.34)}
+.btn-g:hover{background:rgba(255,255,255,.14);color:var(--white)}
+.btn-o{color:var(--brand-500);border:1px solid var(--line-strong)}
+.btn-o:hover{background:var(--sky-50);border-color:var(--sky-200)}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:var(--white);border-radius:var(--r-ctl)}
+
+.hdr.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:var(--sh-sm);border-bottom-color:var(--line)}
+.hdr.solid .brand{color:var(--navy-900)}
+.hdr.solid .nav a{color:var(--navy-700)}
+.hdr.solid .nav a:hover,.hdr.solid .nav a[aria-current]{color:var(--brand-500)}
+.hdr.solid .btn-g{color:var(--navy-700);border-color:var(--line-strong)}
+.hdr.solid .btn-g:hover{background:var(--sky-50);color:var(--brand-600)}
+.hdr.solid .burger{color:var(--navy-900)}
+.hdr.compact .hsearch{display:flex}
+
+.mnav{display:none;background:var(--white);border-top:1px solid var(--line);box-shadow:var(--sh-md)}
+.mnav.open{display:block}
+.mnav a,.mnav .mrow{display:block;padding:14px 24px;color:var(--navy-700);font-size:16px;border-bottom:1px solid var(--line)}
+.mnav .mrow{display:flex;gap:10px}
+.mnav .mrow .btn{flex:1}
+
+/* ─── hero ─── */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(160deg,var(--sky-100),var(--sky-200))}
+.hero-bg{position:absolute;inset-block-start:-10%;inset-inline:0;height:120%;will-change:transform}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg.fb img{display:none}
+.hero-bg .hfb{display:none;position:absolute;inset:0;background:linear-gradient(150deg,var(--sky-100),var(--sky-200) 55%,var(--brand-500));}
+.hero-bg.fb .hfb{display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,36,64,.62),rgba(10,36,64,.34) 42%,rgba(10,36,64,.66));pointer-events:none}
+.hero-in{position:relative;z-index:2;width:100%;max-width:var(--cw);margin:0 auto;padding:140px 24px 200px;color:var(--white)}
+.hpill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:13px;color:var(--white);margin-bottom:24px}
+.h1{font:700 56px/1.3 Vazirmatn,Tahoma,sans-serif;letter-spacing:-.02em;max-width:16ch;color:var(--white)}
+.h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+.h1 .wi{display:inline-block}
+.hsub{margin-top:20px;max-width:52ch;font-size:17px;line-height:1.8;color:rgba(255,255,255,.9)}
+
+/* ─── search widget ─── */
+.swrap{position:relative;z-index:20;max-width:var(--cw);margin:-116px auto 0;padding-inline:24px}
+.sw{background:var(--white);border-radius:var(--r-card);box-shadow:var(--sh-xl);padding:20px;display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:12px;align-items:end}
+.fld{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld>label,.fld>.lb{font-size:13px;color:var(--slate-400);padding-inline-start:4px}
+.ctl{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r-ctl);background:var(--white);color:var(--navy-900);font-size:16px;text-align:start;transition:border-color .18s ease,box-shadow .18s ease}
+.ctl:hover{border-color:var(--sky-200)}
+.ctl[aria-expanded="true"]{border-color:var(--brand-500);box-shadow:0 0 0 3px var(--sky-100)}
+.ctl svg{flex:none;color:var(--brand-500)}
+.ctl .val{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctl .ph{color:var(--slate-400)}
+.pop{position:absolute;inset-block-start:calc(100% + 8px);inset-inline-start:0;inset-inline-end:0;z-index:30;background:var(--white);border:1px solid var(--line);border-radius:var(--r-ctl);box-shadow:var(--sh-lg);padding:8px;display:none;max-height:300px;overflow:auto}
+.pop.open{display:block}
+.pop input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;color:var(--navy-900)}
+.pop input:focus{outline:none;border-color:var(--brand-500);box-shadow:0 0 0 3px var(--sky-100)}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:10px 12px;border-radius:10px;color:var(--navy-700);font-size:15px;text-align:start}
+.opt:hover,.opt:focus-visible{background:var(--sky-50);color:var(--brand-700)}
+.opt small{color:var(--slate-400);font-size:13px}
+.pop .none{padding:12px;color:var(--slate-400);font-size:14px}
+.step{display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:6px 10px;border:1px solid var(--line);border-radius:var(--r-ctl)}
+.step button{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--sky-50);color:var(--brand-600);font-size:18px;transition:background .16s ease}
+.step button:hover:not(:disabled){background:var(--sky-100)}
+.step button:disabled{color:var(--slate-400);background:var(--bg-soft);cursor:not-allowed}
+.step .n{font-weight:500;color:var(--navy-900);min-width:5ch;text-align:center}
+.sw .btn-p{min-height:52px;padding-inline:28px}
+.trust{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;padding:20px 4px 0}
+.trust span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--slate-500)}
+.trust svg{color:var(--brand-500)}
+.toast{position:fixed;inset-block-end:24px;inset-inline-start:50%;transform:translate(50%,140%);z-index:90;background:var(--navy-900);color:var(--white);padding:14px 22px;border-radius:999px;font-size:14px;box-shadow:var(--sh-lg);transition:transform .35s cubic-bezier(.2,.8,.2,1);max-width:calc(100vw - 48px)}
+.toast.on{transform:translate(50%,0)}
+
+/* ─── sections ─── */
+section{padding-block:120px}
+.soft{background:var(--bg-soft)}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:40px}
+.h2{font:700 36px/1.4 Vazirmatn,Tahoma,sans-serif;color:var(--navy-900);letter-spacing:-.02em}
+.ssub{margin-top:8px;font-size:17px;line-height:1.8;max-width:56ch}
+.more{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;white-space:nowrap}
+.more svg{transition:transform .2s ease}
+.more:hover svg{transform:translateX(-4px)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.chip{padding:10px 20px;min-height:44px;border-radius:999px;border:1px solid var(--line-strong);background:var(--white);color:var(--navy-700);font-size:15px;transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.chip:hover{border-color:var(--sky-200);background:var(--sky-50)}
+.chip[aria-pressed="true"]{background:var(--brand-500);border-color:var(--brand-500);color:var(--white);box-shadow:0 6px 16px rgba(30,128,227,.22)}
+
+/* tour grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--sh-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.cimg{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-img);margin:12px 12px 0;background:linear-gradient(140deg,var(--sky-100),var(--sky-200))}
+.cimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.card:hover .cimg img{transform:scale(1.06)}
+.cimg.fb{display:flex;align-items:center;justify-content:center}
+.cimg.fb img{display:none}
+.cimg .fbt{display:none;font-weight:500;color:var(--brand-700);font-size:18px}
+.cimg.fb .fbt{display:block}
+.apill{position:absolute;inset-block-start:12px;inset-inline-start:12px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--navy-700);font-size:13px;font-weight:500}
+.heart{position:absolute;inset-block-start:12px;inset-inline-end:12px;width:40px;height:40px;border-radius:999px;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;color:var(--slate-500);transition:color .18s ease,transform .18s ease,background .18s ease}
+.heart:hover{color:var(--danger);transform:scale(1.08)}
+.heart[aria-pressed="true"]{color:var(--danger)}
+.heart[aria-pressed="true"] svg{fill:var(--danger)}
+.cbody{padding:16px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.h3{font:500 20px/1.5 Vazirmatn,Tahoma,sans-serif;color:var(--navy-900)}
+.meta{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--slate-500)}
+.meta svg{flex:none;color:var(--slate-400)}
+.cap{font-size:14px;font-weight:500}
+.cap.ok{color:var(--success)}
+.cap.low{color:var(--danger)}
+.cap em{font-style:normal;font-weight:400;color:var(--slate-400)}
+.cfoot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.price{display:flex;flex-direction:column;gap:2px}
+.price .lb2{font-size:13px;color:var(--slate-400)}
+.price b{font:700 20px/1.3 Vazirmatn,Tahoma,sans-serif;color:var(--amber-500)}
+.empty{display:none;text-align:center;padding:72px 24px;border:1px dashed var(--line-strong);border-radius:var(--r-card);background:var(--white)}
+.empty.on{display:block}
+.empty svg{color:var(--sky-200)}
+.empty b{display:block;margin:16px 0 8px;font:500 20px/1.5 Vazirmatn,Tahoma,sans-serif;color:var(--navy-900)}
+
+/* destinations slider */
+.srail{position:relative}
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-block:4px 12px;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-behavior:auto;scroll-snap-type:none}
+.dcard{position:relative;flex:0 0 calc((100% - 80px)/5);scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-md);background:linear-gradient(140deg,var(--sky-100),var(--sky-200));transition:transform .25s ease,box-shadow .25s ease}
+.dcard:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.dcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.dcard:hover img{transform:scale(1.06)}
+.dcard.fb img{display:none}
+.dcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,36,64,.82),rgba(10,36,64,.06) 58%)}
+.dcap{position:absolute;inset-block-end:0;inset-inline:0;z-index:2;padding:20px;color:var(--white)}
+.dcap b{display:block;font:700 22px/1.4 Vazirmatn,Tahoma,sans-serif}
+.dcap span{font-size:14px;color:rgba(255,255,255,.86)}
+.dall{flex:0 0 calc((100% - 80px)/5);scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--r-card);border:1px dashed var(--line-strong);background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--brand-600);font-weight:500;transition:background .2s ease,border-color .2s ease}
+.dall:hover{background:var(--sky-50);border-color:var(--sky-200)}
+.arrows{display:flex;gap:10px}
+.arw{width:48px;height:48px;border-radius:999px;border:1px solid var(--line-strong);background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--navy-700);box-shadow:var(--sh-sm);transition:background .18s ease,color .18s ease,opacity .18s ease}
+.arw:hover:not(:disabled){background:var(--brand-500);border-color:var(--brand-500);color:var(--white)}
+.arw:disabled{opacity:.4;cursor:not-allowed}
+
+/* how it works */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.conn{position:absolute;inset-block-start:56px;inset-inline:12%;height:60px;z-index:0;pointer-events:none}
+.conn path{fill:none;stroke:var(--sky-200);stroke-width:2;stroke-dasharray:6 8;stroke-linecap:round}
+.step-c{position:relative;z-index:1;text-align:center;padding:0 8px}
+.step-n{font:700 96px/1 Vazirmatn,Tahoma,sans-serif;color:var(--sky-100);letter-spacing:-.04em}
+.step-ic{width:64px;height:64px;margin:-40px auto 20px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:var(--sh-md);display:flex;align-items:center;justify-content:center;color:var(--brand-500);position:relative}
+.step-c b{display:block;font:500 20px/1.5 Vazirmatn,Tahoma,sans-serif;color:var(--navy-900);margin-bottom:8px}
+
+/* CTA band */
+.cta{position:relative;overflow:hidden;background:var(--brand-700);color:var(--white);padding-block:96px}
+.cta::before{content:"";position:absolute;inset:0;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 100% at 100% 0%,#000,transparent 70%)}
+.cta-in{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .9fr;gap:56px;align-items:center}
+.cta h2{font:700 36px/1.4 Vazirmatn,Tahoma,sans-serif;color:var(--white);letter-spacing:-.02em}
+.cta p{margin-top:12px;font-size:17px;line-height:1.8;color:rgba(255,255,255,.86);max-width:52ch}
+.cta .btn{margin-top:28px}
+.stats{display:grid;gap:20px}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-card);padding:20px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.stat b{font:700 32px/1.2 Vazirmatn,Tahoma,sans-serif;color:var(--white)}
+.stat span{font-size:15px;color:rgba(255,255,255,.82)}
+
+/* footer */
+.ft{background:var(--bg-soft);border-top:1px solid var(--line);padding-block:72px 28px}
+.ft-top{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:40px}
+.ft-brand .brand{color:var(--navy-900)}
+.ft-brand p{margin-top:16px;font-size:15px;max-width:34ch}
+.nl{margin-top:24px}
+.nl .lb3{display:block;font-size:14px;font-weight:500;color:var(--navy-700);margin-bottom:8px}
+.nl form{display:flex;gap:8px}
+.nl input{flex:1;min-width:0;min-height:48px;padding:10px 14px;border:1px solid var(--line-strong);border-radius:var(--r-ctl);background:var(--white);color:var(--navy-900)}
+.nl input:focus{outline:none;border-color:var(--brand-500);box-shadow:0 0 0 3px var(--sky-100)}
+.nl input[aria-invalid="true"]{border-color:var(--danger)}
+.nl .msg{display:block;margin-top:8px;font-size:13px;min-height:20px}
+.nl .msg.ok{color:var(--success)}
+.nl .msg.err{color:var(--danger)}
+.fcol summary{list-style:none;font:500 16px/1.6 Vazirmatn,Tahoma,sans-serif;color:var(--navy-900);cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding-block:8px}
+.fcol summary::-webkit-details-marker{display:none}
+.fcol summary svg{display:none;color:var(--slate-400);transition:transform .2s ease}
+.fcol[open] summary svg{transform:rotate(180deg)}
+.fcol ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.fcol a{font-size:15px;color:var(--slate-500)}
+.fcol a:hover{color:var(--brand-500)}
+.ft-bot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--slate-400)}
+.social{display:flex;gap:10px}
+.social a{width:40px;height:40px;border-radius:999px;border:1px solid var(--line-strong);background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--slate-500);transition:color .18s ease,border-color .18s ease}
+.social a:hover{color:var(--brand-500);border-color:var(--sky-200)}
+
+/* ─── progressive-enhancement animation layer ─── */
+.js .h1 .wi{transform:translateY(105%);opacity:0;clip-path:inset(0 0 0 0)}
+.js .h1.in .wi{transform:none;opacity:1;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .6s ease;transition-delay:calc(var(--i) * 90ms)}
+.js .hpill,.js .hsub{opacity:0;transform:translateY(16px)}
+.js .hpill.in,.js .hsub.in{opacity:1;transform:none;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+.js .sw,.js .trust{opacity:0;transform:translateY(28px)}
+.js .sw.in,.js .trust.in{opacity:1;transform:none;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+.js .rev{opacity:0;transform:translateY(26px)}
+.js .rev.in{opacity:1;transform:none;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+.js .conn path{stroke-dasharray:6 8;stroke-dashoffset:600;transition:stroke-dashoffset 1.6s ease-out}
+.js .conn.in path{stroke-dashoffset:0}
+.card.fade{opacity:0;transform:translateY(10px);transition:opacity .22s ease,transform .22s ease}
+
+/* ─── responsive ─── */
+@media (max-width:1024px){
+  .hero-in{padding:120px 24px 180px}
+  .h1{font-size:44px}
+  .sw{grid-template-columns:1fr 1fr;gap:14px}
+  .sw .btn-p{grid-column:1/-1}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .dcard,.dall{flex-basis:calc((100% - 40px)/3)}
+  .cta-in{grid-template-columns:1fr;gap:36px}
+  .ft-top{grid-template-columns:1fr 1fr;gap:32px}
+  .nav a{padding-inline:8px;font-size:14px}
+}
+@media (max-width:820px){
+  .nav,.hact .btn{display:none}
+  .burger{display:flex}
+  .hdr.compact .hsearch{display:none}
+  section{padding-block:64px}
+  .hero{min-height:auto}
+  .hero-in{padding:120px 24px 56px}
+  .h1{font-size:32px;line-height:1.4}
+  .hsub{font-size:15px}
+  .swrap{margin-top:24px}
+  .sw{grid-template-columns:1fr;box-shadow:var(--sh-lg)}
+  .trust{justify-content:flex-start;gap:14px}
+  .h2{font-size:26px}
+  .ssub{font-size:15px}
+  .shead{flex-direction:column;align-items:flex-start;gap:12px}
+  .grid{grid-template-columns:1fr}
+  .dcard,.dall{flex-basis:66%}
+  .steps{grid-template-columns:1fr;gap:24px}
+  .conn{display:none}
+  .step-n{font-size:64px}
+  .step-ic{margin-top:-28px}
+  .cta{padding-block:56px}
+  .cta h2{font-size:26px}
+  .ft-top{grid-template-columns:1fr;gap:0}
+  .fcol{border-bottom:1px solid var(--line)}
+  .fcol summary svg{display:block}
+  .fcol ul{margin-bottom:16px}
+  .ft-brand{margin-bottom:24px}
+}
+@media (min-width:821px){
+  .fcol>ul{display:flex!important}
+  .fcol summary{pointer-events:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .js .h1 .wi,.js .hpill,.js .hsub,.js .sw,.js .trust,.js .rev{opacity:1!important;transform:none!important}
+  .js .conn path{stroke-dashoffset:0!important}
+  .hero-bg{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<a class="sr" href="#tours">رفتن به تورهای پیشنهادی</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="#top" aria-label="TravelOps — صفحه‌ی اصلی">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13.5 20.5 4l-6 17-3.5-6.5L3 13.5Z"></path><path d="M11 14.5 20.5 4"></path></svg>
+      <b>TravelOps</b>
+    </a>
+    <nav class="nav" aria-label="ناوبری اصلی">
+      <a href="#tours" aria-current="page">تورها</a>
+      <a href="#dests">مقصدها</a>
+      <a href="#how">درباره ما</a>
+    </nav>
+    <div class="hdr-sp"></div>
+    <button class="hsearch" id="hsearch" type="button">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <span>جستجوی تور یا مقصد</span>
+    </button>
+    <div class="hact">
+      <a class="btn btn-g" href="#register">ثبت‌نام</a>
+      <a class="btn btn-p" href="#login">ورود</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="باز کردن منو">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <a href="#tours">تورها</a>
+    <a href="#dests">مقصدها</a>
+    <a href="#how">درباره ما</a>
+    <div class="mrow">
+      <a class="btn btn-o" href="#register">ثبت‌نام</a>
+      <a class="btn btn-p" href="#login">ورود</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding:0">
+    <div class="hero-bg fb" id="heroBg">
+      <img data-src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80&auto=format&fit=crop" alt="بال هواپیما در ارتفاع بالای ابرها" decoding="async" data-fb="آسمان">
+      <span class="hfb" aria-hidden="true"></span>
+    </div>
+    <div class="hero-in">
+      <span class="hpill" style="--d:520ms">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.6 5.6 6.1.8-4.5 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.3 9.4l6.1-.8L12 3Z"></path></svg>
+        مارکت‌پلیس تور — ۱۲۰+ آژانس معتبر در یک جا
+      </span>
+      <h1 class="h1" id="h1">
+        <span class="w" style="--i:0"><span class="wi">تور</span></span>
+        <span class="w" style="--i:1"><span class="wi">بعدی‌ات</span></span>
+        <span class="w" style="--i:2"><span class="wi">را</span></span>
+        <span class="w" style="--i:3"><span class="wi">از</span></span>
+        <span class="w" style="--i:4"><span class="wi">میان</span></span>
+        <span class="w" style="--i:5"><span class="wi">آژانس‌های</span></span>
+        <span class="w" style="--i:6"><span class="wi">معتبر</span></span>
+        <span class="w" style="--i:7"><span class="wi">پیدا</span></span>
+        <span class="w" style="--i:8"><span class="wi">کن</span></span>
+      </h1>
+      <p class="hsub" style="--d:900ms">تورهای داخلی و خارجی ده‌ها آژانس مسافرتی را کنار هم ببین، قیمت و ظرفیت را مقایسه کن و در چند دقیقه درخواست رزرو بده.</p>
+    </div>
+  </section>
+
+  <div class="swrap">
+    <form class="sw" id="sw" style="--d:1120ms">
+      <div class="fld">
+        <span class="lb" id="lb-dest">مقصد</span>
+        <button class="ctl" type="button" id="destBtn" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="lb-dest">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+          <span class="val ph" id="destVal">کجا می‌خواهی بروی؟</span>
+        </button>
+        <div class="pop" id="destPop" role="listbox" aria-label="لیست مقصدها">
+          <input type="search" id="destSearch" placeholder="جستجوی مقصد…" aria-label="جستجوی مقصد">
+          <div id="destList"></div>
+        </div>
+      </div>
+
+      <div class="fld">
+        <span class="lb" id="lb-date">تاریخ حرکت</span>
+        <button class="ctl" type="button" id="dateBtn" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="lb-date">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
+          <span class="val ph" id="dateVal">هر تاریخی</span>
+        </button>
+        <div class="pop" id="datePop" role="listbox" aria-label="تاریخ‌های حرکت موجود"></div>
+      </div>
+
+      <div class="fld">
+        <span class="lb">تعداد نفرات</span>
+        <div class="step" role="group" aria-label="تعداد نفرات">
+          <button type="button" id="minus" aria-label="کاهش تعداد نفرات">−</button>
+          <span class="n" id="paxN" aria-live="polite">۲ نفر</span>
+          <button type="button" id="plus" aria-label="افزایش تعداد نفرات">+</button>
+        </div>
+      </div>
+
+      <button class="btn btn-p" type="submit">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        جستجو
+      </button>
+    </form>
+    <div class="trust" style="--d:1300ms">
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6l-7-3Z"></path></svg>۱۲۰+ آژانس معتبر</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="10" width="18" height="11" rx="3"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>پرداخت امن</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>پشتیبانی ۲۴ ساعته</span>
+    </div>
+  </div>
+
+  <!-- ۶-۴ تورهای پیشنهادی — یادداشت طراحی: کلیک روی چیپ‌های دسته‌بندی در نسخه‌ی واقعی کاربر را به /tours با همان فیلتر منتقل می‌کند؛ اینجا برای نمایش، گرید همان صفحه فیلتر می‌شود. -->
+  <section id="tours">
+    <div class="wrap">
+      <div class="shead rev">
+        <div>
+          <h2 class="h2">تورهای پیشنهادی</h2>
+          <p class="ssub">منتخبی از تورهای منتشرشده‌ی آژانس‌های همکار، با ظرفیت و تاریخ حرکت به‌روز.</p>
+        </div>
+        <a class="more" href="#tours">مشاهده همه
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+        </a>
+      </div>
+
+      <div class="chips rev" style="--d:80ms" role="group" aria-label="دسته‌بندی تورها">
+        <button class="chip" type="button" data-cat="all" aria-pressed="true">همه</button>
+        <button class="chip" type="button" data-cat="in" aria-pressed="false">داخلی</button>
+        <button class="chip" type="button" data-cat="out" aria-pressed="false">خارجی</button>
+        <button class="chip" type="button" data-cat="pil" aria-pressed="false">زیارتی</button>
+        <button class="chip" type="button" data-cat="nat" aria-pressed="false">طبیعت‌گردی</button>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <article class="card rev" data-cat="in" style="--d:0ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80&auto=format&fit=crop" alt="ساحل و آب فیروزه‌ای جزیره‌ی کیش" decoding="async" data-fb="کیش"><span class="fbt">کیش</span><span class="apill">پارس‌گشت</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور کیش به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور کیش</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>کیش، هرمزگان</p>
+            <p class="meta">حرکت ۱۸ مرداد ۱۴۰۵ — ۴ روز</p>
+            <p class="cap ok">۱۲ نفر ظرفیت باقی‌مانده <em>— ۳ درخواست در جریان</em></p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۱۸٬۵۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="out" style="--d:80ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80&auto=format&fit=crop" alt="نمای مسجد ایاصوفیه در استانبول" decoding="async" data-fb="استانبول"><span class="fbt">استانبول</span><span class="apill">سفرهای آسمان آبی</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور استانبول به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور استانبول</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>استانبول، ترکیه</p>
+            <p class="meta">حرکت ۲۲ مرداد ۱۴۰۵ — ۶ روز</p>
+            <p class="cap low">فقط ۲ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۴۵٬۰۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="pil" style="--d:160ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80&auto=format&fit=crop" alt="گنبد و مناره‌های یک حرم مقدس" decoding="async" data-fb="مشهد"><span class="fbt">مشهد</span><span class="apill">ققنوس سیر</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور مشهد مقدس به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور مشهد مقدس</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>مشهد، خراسان رضوی</p>
+            <p class="meta">حرکت ۱۴ مرداد ۱۴۰۵ — ۳ روز</p>
+            <p class="cap ok">۲۰ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۹٬۸۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="nat" style="--d:0ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80&auto=format&fit=crop" alt="کوه و مه بر فراز دره" decoding="async" data-fb="قشم"><span class="fbt">قشم</span><span class="apill">هما گشت</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور قشم و هرمز به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور قشم و هرمز</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>قشم، هرمزگان</p>
+            <p class="meta">حرکت ۲۸ مرداد ۱۴۰۵ — ۵ روز</p>
+            <p class="cap ok">۸ نفر ظرفیت باقی‌مانده <em>— ۲ درخواست در جریان</em></p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۲۲٬۴۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="out" style="--d:80ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?w=800&q=80&auto=format&fit=crop" alt="ساحل و صخره‌های آنتالیا" decoding="async" data-fb="آنتالیا"><span class="fbt">آنتالیا</span><span class="apill">ایران‌پیما گشت</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور آنتالیا به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور آنتالیا</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>آنتالیا، ترکیه</p>
+            <p class="meta">حرکت ۲ شهریور ۱۴۰۵ — ۷ روز</p>
+            <p class="cap ok">۱۵ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۶۲٬۰۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="out" style="--d:160ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80&auto=format&fit=crop" alt="خانه‌های قدیمی تفلیس در دامنه‌ی تپه" decoding="async" data-fb="تفلیس"><span class="fbt">تفلیس</span><span class="apill">پارس‌گشت</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور تفلیس به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور تفلیس</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>تفلیس، گرجستان</p>
+            <p class="meta">حرکت ۹ شهریور ۱۴۰۵ — ۵ روز</p>
+            <p class="cap low">فقط ۳ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۳۸٬۰۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="nat" style="--d:0ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80&auto=format&fit=crop" alt="جنگل سبز و مه‌گرفته" decoding="async" data-fb="ماسوله"><span class="fbt">ماسوله</span><span class="apill">سبزسیر البرز</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور ماسوله و رشت به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور ماسوله و رشت</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>ماسوله، گیلان</p>
+            <p class="meta">حرکت ۱۶ مرداد ۱۴۰۵ — ۳ روز</p>
+            <p class="cap ok">۱۰ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۷٬۲۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="out" style="--d:80ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80&auto=format&fit=crop" alt="آسمان‌خراش‌های دبی در غروب" decoding="async" data-fb="دبی"><span class="fbt">دبی</span><span class="apill">سفرهای آسمان آبی</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور دبی به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور دبی</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>دبی، امارات</p>
+            <p class="meta">حرکت ۵ شهریور ۱۴۰۵ — ۵ روز</p>
+            <p class="cap ok">۹ نفر ظرفیت باقی‌مانده <em>— ۴ درخواست در جریان</em></p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۵۵٬۰۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card rev" data-cat="pil" style="--d:160ms">
+          <div class="cimg fb"><img data-src="https://images.unsplash.com/photo-1519810755548-39cd217da494?w=800&q=80&auto=format&fit=crop" alt="گنبد طلایی و صحن یک زیارتگاه" decoding="async" data-fb="کربلا"><span class="fbt">کربلا</span><span class="apill">ققنوس سیر</span><button class="heart" type="button" aria-pressed="false" aria-label="افزودن تور کربلا و نجف به علاقه‌مندی‌ها"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20Z"></path></svg></button></div>
+          <div class="cbody">
+            <h3 class="h3">تور کربلا و نجف</h3>
+            <p class="meta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>کربلا و نجف، عراق</p>
+            <p class="meta">حرکت ۱۲ شهریور ۱۴۰۵ — ۸ روز</p>
+            <p class="cap ok">۳۰ نفر ظرفیت باقی‌مانده</p>
+            <div class="cfoot">
+              <span class="price"><span class="lb2">نفری از</span><b>۳۲٬۵۰۰٬۰۰۰ تومان</b></span>
+              <a class="btn btn-o" href="#tours">مشاهده تور</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty" id="empty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <b>توری با این مشخصات پیدا نشد</b>
+        <p>فیلتر دسته‌بندی را بردار یا دسته‌ی دیگری را امتحان کن.</p>
+        <button class="btn btn-p" type="button" id="clearCat" style="margin-top:20px">نمایش همه‌ی تورها</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="dests">
+    <div class="wrap">
+      <div class="shead rev">
+        <div>
+          <h2 class="h2">مقصدهای محبوب</h2>
+          <p class="ssub">پرتقاضاترین مقصدهای این فصل، بر اساس تعداد تورهای فعال آژانس‌ها.</p>
+        </div>
+        <div class="arrows">
+          <button class="arw" type="button" id="prev" aria-label="مقصدهای قبلی">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+          </button>
+          <button class="arw" type="button" id="next" aria-label="مقصدهای بعدی">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="srail rev" style="--d:80ms">
+        <div class="rail" id="rail">
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80&auto=format&fit=crop" alt="مسجد و خلیج در استانبول" decoding="async" data-fb="استانبول"><span class="dcap"><b>استانبول</b><span>۱۴ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1564769610726-59cbf9a4a3d5?w=800&q=80&auto=format&fit=crop" alt="حرم و گلدسته در مشهد" decoding="async" data-fb="مشهد"><span class="dcap"><b>مشهد</b><span>۱۱ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80&auto=format&fit=crop" alt="ساحل شنی و آب آبی کیش" decoding="async" data-fb="کیش"><span class="dcap"><b>کیش</b><span>۹ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&q=80&auto=format&fit=crop" alt="خط آسمان دبی" decoding="async" data-fb="دبی"><span class="dcap"><b>دبی</b><span>۶ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1605537964076-3cb0d2a1de91?w=800&q=80&auto=format&fit=crop" alt="ساحل و قایق‌ها در آنتالیا" decoding="async" data-fb="آنتالیا"><span class="dcap"><b>آنتالیا</b><span>۵ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1571104508999-893933ded431?w=800&q=80&auto=format&fit=crop" alt="بافت قدیمی شهر تفلیس" decoding="async" data-fb="تفلیس"><span class="dcap"><b>تفلیس</b><span>۴ تور فعال</span></span></a>
+          <a class="dcard fb" href="#tours"><img data-src="https://images.unsplash.com/photo-1533387520709-752d83de3630?w=800&q=80&auto=format&fit=crop" alt="صخره‌های دره‌ی ستاره‌ها در قشم" decoding="async" data-fb="قشم"><span class="dcap"><b>قشم</b><span>۳ تور فعال</span></span></a>
+          <a class="dall" href="#dests">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+            مشاهده‌ی همه‌ی مقصدها
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="shead rev" style="justify-content:center;text-align:center">
+        <div>
+          <h2 class="h2">چطور کار می‌کند</h2>
+          <p class="ssub" style="margin-inline:auto">از پیدا کردن تور تا رفتن به سفر، سه قدم.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <svg class="conn" id="conn" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M780 30C650 -6 570 62 400 30 230 -2 150 64 20 30"></path>
+        </svg>
+        <div class="step-c rev" style="--d:0ms">
+          <div class="step-n">۱</div>
+          <div class="step-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <b>تور را پیدا کن</b>
+          <p>مقصد و تاریخ را بده، تورهای همه‌ی آژانس‌ها را کنار هم مقایسه کن.</p>
+        </div>
+        <div class="step-c rev" style="--d:140ms">
+          <div class="step-n">۲</div>
+          <div class="step-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8a2 2 0 0 1 2 2v14l-6-3-6 3V6a2 2 0 0 1 2-2Z"></path><path d="M9.5 10h5"></path></svg></div>
+          <b>درخواست رزرو بده</b>
+          <p>اطلاعات مسافران را وارد کن و درخواستت را برای آژانس بفرست.</p>
+        </div>
+        <div class="step-c rev" style="--d:280ms">
+          <div class="step-n">۳</div>
+          <div class="step-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"></rect><path d="M3 11h18M7 15.5h3"></path></svg></div>
+          <b>پرداخت کن و سفر کن</b>
+          <p>بعد از تأیید آژانس پرداخت کن و وضعیت سفرت را قدم‌به‌قدم دنبال کن.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۶-۷ نوار CTA آژانس — یادداشت طراحی: دکمه‌ی «ثبت‌نام آژانس» به صفحه‌ی انتخاب نقش (/register) می‌رود، نه فرم ثبت‌نام مشتری. -->
+  <section class="cta" id="register">
+    <div class="wrap cta-in">
+      <div class="rev">
+        <h2>آژانس مسافرتی هستید؟</h2>
+        <p>تورهایت را روی TravelOps منتشر کن، درخواست‌های رزرو را در یک صف کاری مدیریت کن و مسافرانت را از ثبت درخواست تا پایان سفر پیگیری کن.</p>
+        <a class="btn btn-w" href="#register">
+          ثبت‌نام آژانس
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+        </a>
+      </div>
+      <div class="stats rev" style="--d:120ms" id="stats">
+        <div class="stat"><b data-to="120" data-suffix="+">۱۲۰+</b><span>آژانس همکار</span></div>
+        <div class="stat"><b data-to="850" data-suffix="+">۸۵۰+</b><span>تور فعال</span></div>
+        <div class="stat"><b data-to="24000" data-suffix="+">۲۴٬۰۰۰+</b><span>مسافر</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft" id="login">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <span class="brand">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13.5 20.5 4l-6 17-3.5-6.5L3 13.5Z"></path><path d="M11 14.5 20.5 4"></path></svg>
+          <b>TravelOps</b>
+        </span>
+        <p>سامانه‌ی مدیریت آژانس‌های مسافرتی و مارکت‌پلیس تور — از انتشار تور تا پایان سفر مسافر.</p>
+        <div class="nl">
+          <span class="lb3">از تورهای جدید باخبر شو</span>
+          <form id="nlForm" novalidate>
+            <input type="email" id="nlEmail" placeholder="ایمیل شما" aria-label="ایمیل برای خبرنامه" autocomplete="email">
+            <button class="btn btn-p" type="submit">عضویت</button>
+          </form>
+          <span class="msg" id="nlMsg" role="status"></span>
+        </div>
+      </div>
+
+      <details class="fcol" open>
+        <summary>مسافران <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul>
+          <li><a href="#tours">جستجوی تور</a></li>
+          <li><a href="#tours">رزروهای من</a></li>
+          <li><a href="#how">راهنمای رزرو</a></li>
+        </ul>
+      </details>
+
+      <details class="fcol" open>
+        <summary>آژانس‌ها <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul>
+          <li><a href="#register">ورود به کنسول</a></li>
+          <li><a href="#register">قوانین همکاری</a></li>
+          <li><a href="#register">تعرفه‌ها</a></li>
+        </ul>
+      </details>
+
+      <details class="fcol" open>
+        <summary>پشتیبانی <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul>
+          <li><a href="#login">تماس با ما</a></li>
+          <li><a href="#login">سؤالات پرتکرار</a></li>
+          <li><a href="#login">شرایط لغو</a></li>
+          <li><a href="#login">حریم خصوصی</a></li>
+        </ul>
+      </details>
+
+      <details class="fcol" open>
+        <summary>درباره <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul>
+          <li><a href="#how">درباره TravelOps</a></li>
+          <li><a href="#how">وبلاگ</a></li>
+          <li><a href="#how">فرصت‌های شغلی</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="ft-bot">
+      <span>© ۱۴۰۵ TravelOps — همه‌ی حقوق محفوظ است.</span>
+      <div class="social">
+        <a href="#login" aria-label="اینستاگرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17" cy="7" r="1"></circle></svg></a>
+        <a href="#login" aria-label="تلگرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5 3 11.5l5 1.8L9.5 20l3-4.2L19 6"></path><path d="m8 13.3 11-7.3-8 10"></path></svg></a>
+        <a href="#login" aria-label="لینکدین"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4"></path></svg></a>
+      </div>
+      <span>نسخه‌ی ۱٫۰</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var D=document, root=D.documentElement;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('js');
+
+  /* ── webfont, injected after the document is interactive ──
+     Kept out of <head> so a stalled font CDN can never delay rendering,
+     the load event, or this script. The Vazirmatn/Tahoma stack covers the gap. */
+  window.addEventListener('load',function(){
+    var l=D.createElement('link');
+    l.rel='stylesheet';
+    l.href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap';
+    D.head.appendChild(l);
+  });
+
+  /* ── Persian numerals ── */
+  var FA='۰۱۲۳۴۵۶۷۸۹';
+  function fa(n){ return String(n).replace(/[0-9]/g,function(d){return FA[+d];}); }
+  function faNum(n){
+    var s=String(n), out='', c=0;
+    for(var i=s.length-1;i>=0;i--){ out=s[i]+out; if(++c%3===0 && i>0) out='٬'+out; }
+    return fa(out);
+  }
+
+  /* ── toast ── */
+  var toast=D.getElementById('toast'), tT;
+  function say(msg){
+    toast.textContent=msg; toast.classList.add('on');
+    clearTimeout(tT); tT=setTimeout(function(){toast.classList.remove('on');},3200);
+  }
+
+  /* ── images ──
+     Default markup carries .fb (blue gradient + destination label), so the page is
+     complete and beautiful with no photos at all — no JS, offline, or blocked CDN.
+     Photos are fetched here and only revealed once a decode actually succeeds; a
+     hanging request is treated exactly like a failed one. No <img src> exists in the
+     document, so nothing a slow network does can delay load or the interaction layer. */
+  var imgs=[].slice.call(D.querySelectorAll('img[data-src]'));
+  function boxOf(img){ return img.closest('.cimg')||img.closest('.dcard')||img.closest('.hero-bg')||img.parentNode; }
+  imgs.forEach(function(img){
+    var box=boxOf(img), done=false, url=img.dataset.src;
+    var give=setTimeout(function(){ if(!done){ done=true; img.removeAttribute('src'); } },3000);
+    img.addEventListener('load',function(){
+      if(done||!img.naturalWidth) return;
+      done=true; clearTimeout(give);
+      if(box) box.classList.remove('fb');
+    });
+    img.addEventListener('error',function(){ done=true; clearTimeout(give); });
+    img.src=url;
+  });
+
+  /* ── reveal on scroll ── */
+  var revealables=[].slice.call(D.querySelectorAll('.rev'));
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+    revealables.forEach(function(el){ io.observe(el); });
+    var conn=D.getElementById('conn');
+    if(conn){
+      var io2=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ conn.classList.add('in'); io2.unobserve(conn); } });
+      },{threshold:.4});
+      io2.observe(conn);
+    }
+  } else {
+    revealables.forEach(function(el){ el.classList.add('in'); });
+    var c2=D.getElementById('conn'); if(c2) c2.classList.add('in');
+  }
+
+  /* ── hero entrance ── */
+  ['h1','sw'].forEach(function(id){ var el=D.getElementById(id); if(el) requestAnimationFrame(function(){ el.classList.add('in'); }); });
+  ['.hpill','.hsub','.trust'].forEach(function(s){ var el=D.querySelector(s); if(el) requestAnimationFrame(function(){ el.classList.add('in'); }); });
+
+  /* ── header state + parallax ── */
+  var hdr=D.getElementById('hdr'), heroBg=D.getElementById('heroBg'), sw=D.getElementById('sw');
+  var ticking=false;
+  function onScroll(){
+    var y=window.pageYOffset||D.documentElement.scrollTop;
+    hdr.classList.toggle('solid', y>40);
+    if(sw){
+      var r=sw.getBoundingClientRect();
+      hdr.classList.toggle('compact', r.bottom < 90);
+    }
+    if(heroBg && !reduce) heroBg.style.transform='translate3d(0,'+(y*0.4)+'px,0)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScroll); } },{passive:true});
+  onScroll();
+
+  /* ── mobile menu ── */
+  var burger=D.getElementById('burger'), mnav=D.getElementById('mnav');
+  burger.addEventListener('click',function(){
+    var open=mnav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open?'true':'false');
+    burger.setAttribute('aria-label', open?'بستن منو':'باز کردن منو');
+  });
+  mnav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); } });
+
+  /* ── popovers ── */
+  function bindPop(btn,pop,onOpen){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=!pop.classList.contains('open');
+      closeAll();
+      if(open){ pop.classList.add('open'); btn.setAttribute('aria-expanded','true'); if(onOpen) onOpen(); }
+    });
+    pop.addEventListener('click',function(e){ e.stopPropagation(); });
+  }
+  function closeAll(){
+    [].forEach.call(D.querySelectorAll('.pop.open'),function(p){
+      p.classList.remove('open');
+      var b=p.parentNode.querySelector('.ctl'); if(b) b.setAttribute('aria-expanded','false');
+    });
+  }
+  D.addEventListener('click',closeAll);
+  D.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeAll(); if(mnav.classList.contains('open')){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); } } });
+
+  /* ── destination dropdown ── */
+  var DESTS=[
+    {n:'استانبول، ترکیه',c:14},{n:'مشهد، خراسان رضوی',c:11},{n:'کیش، هرمزگان',c:9},
+    {n:'دبی، امارات',c:6},{n:'آنتالیا، ترکیه',c:5},{n:'تفلیس، گرجستان',c:4},
+    {n:'قشم، هرمزگان',c:3},{n:'ماسوله، گیلان',c:3},{n:'کربلا و نجف، عراق',c:2}
+  ];
+  var destBtn=D.getElementById('destBtn'), destPop=D.getElementById('destPop'),
+      destVal=D.getElementById('destVal'), destList=D.getElementById('destList'),
+      destSearch=D.getElementById('destSearch');
+  function renderDests(q){
+    q=(q||'').trim();
+    var items=DESTS.filter(function(d){ return !q || d.n.indexOf(q)>-1; });
+    destList.innerHTML='';
+    if(!items.length){ destList.innerHTML='<p class="none">مقصدی با این نام پیدا نشد.</p>'; return; }
+    items.forEach(function(d){
+      var b=D.createElement('button');
+      b.type='button'; b.className='opt'; b.setAttribute('role','option');
+      b.innerHTML='<span>'+d.n+'</span><small>'+fa(d.c)+' تور</small>';
+      b.addEventListener('click',function(){
+        destVal.textContent=d.n; destVal.classList.remove('ph'); closeAll();
+      });
+      destList.appendChild(b);
+    });
+  }
+  renderDests('');
+  bindPop(destBtn,destPop,function(){ destSearch.value=''; renderDests(''); destSearch.focus(); });
+  destSearch.addEventListener('input',function(){ renderDests(destSearch.value); });
+
+  /* ── date picker ── */
+  var DATES=['۱۴ مرداد ۱۴۰۵','۱۶ مرداد ۱۴۰۵','۱۸ مرداد ۱۴۰۵','۲۲ مرداد ۱۴۰۵','۲۸ مرداد ۱۴۰۵','۲ شهریور ۱۴۰۵','۵ شهریور ۱۴۰۵','۹ شهریور ۱۴۰۵','۱۲ شهریور ۱۴۰۵'];
+  var dateBtn=D.getElementById('dateBtn'), datePop=D.getElementById('datePop'), dateVal=D.getElementById('dateVal');
+  (function(){
+    var any=D.createElement('button');
+    any.type='button'; any.className='opt'; any.setAttribute('role','option');
+    any.innerHTML='<span>هر تاریخی</span>';
+    any.addEventListener('click',function(){ dateVal.textContent='هر تاریخی'; dateVal.classList.add('ph'); closeAll(); });
+    datePop.appendChild(any);
+    DATES.forEach(function(d){
+      var b=D.createElement('button');
+      b.type='button'; b.className='opt'; b.setAttribute('role','option');
+      b.innerHTML='<span>'+d+'</span><small>تاریخ حرکت موجود</small>';
+      b.addEventListener('click',function(){ dateVal.textContent=d; dateVal.classList.remove('ph'); closeAll(); });
+      datePop.appendChild(b);
+    });
+  })();
+  bindPop(dateBtn,datePop);
+
+  /* ── pax stepper ── */
+  var pax=2, paxN=D.getElementById('paxN'), minus=D.getElementById('minus'), plus=D.getElementById('plus');
+  function paint(){ paxN.textContent=fa(pax)+' نفر'; minus.disabled=(pax<=1); plus.disabled=(pax>=10); }
+  minus.addEventListener('click',function(){ if(pax>1){ pax--; paint(); } });
+  plus.addEventListener('click',function(){ if(pax<10){ pax++; paint(); } });
+  paint();
+
+  /* ── search submit ── */
+  D.getElementById('sw').addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=destVal.classList.contains('ph')?'همه‌ی مقصدها':destVal.textContent;
+    var t=dateVal.classList.contains('ph')?'هر تاریخی':dateVal.textContent;
+    say('جستجو برای '+d+' — '+t+' — '+fa(pax)+' نفر');
+    var g=D.getElementById('tours');
+    if(g) g.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  });
+  D.getElementById('hsearch').addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    setTimeout(function(){ destBtn.click(); }, reduce?0:600);
+  });
+
+  /* ── category filter ── */
+  var chips=[].slice.call(D.querySelectorAll('.chip')),
+      cards=[].slice.call(D.querySelectorAll('#grid .card')),
+      empty=D.getElementById('empty');
+  function filter(cat){
+    var shown=0;
+    cards.forEach(function(c){
+      var match=(cat==='all'||c.dataset.cat===cat);
+      if(match) shown++;
+      c.classList.add('fade');
+      setTimeout(function(){
+        c.style.display=match?'':'none';
+        if(match) requestAnimationFrame(function(){ c.classList.remove('fade'); });
+      }, reduce?0:180);
+    });
+    empty.classList.toggle('on', shown===0);
+  }
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', c===ch?'true':'false'); });
+      filter(ch.dataset.cat);
+    });
+  });
+  D.getElementById('clearCat').addEventListener('click',function(){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.cat==='all'?'true':'false'); });
+    filter('all');
+  });
+
+  /* ── hearts ── */
+  [].forEach.call(D.querySelectorAll('.heart'),function(h){
+    h.addEventListener('click',function(){
+      var on=h.getAttribute('aria-pressed')!=='true';
+      h.setAttribute('aria-pressed', on?'true':'false');
+      var name=(h.closest('.card').querySelector('.h3')||{}).textContent||'تور';
+      say(on? name+' به علاقه‌مندی‌ها اضافه شد' : name+' از علاقه‌مندی‌ها حذف شد');
+    });
+  });
+
+  /* ── destinations slider ── */
+  var rail=D.getElementById('rail'), prev=D.getElementById('prev'), next=D.getElementById('next');
+  function railStep(){ var f=rail.querySelector('.dcard'); return f? f.getBoundingClientRect().width+20 : 300; }
+  function syncArrows(){
+    var max=rail.scrollWidth-rail.clientWidth-2;
+    var pos=Math.abs(rail.scrollLeft);
+    prev.disabled = pos<=2;
+    next.disabled = pos>=max;
+  }
+  prev.addEventListener('click',function(){ rail.scrollBy({left:railStep(),behavior:reduce?'auto':'smooth'}); });
+  next.addEventListener('click',function(){ rail.scrollBy({left:-railStep(),behavior:reduce?'auto':'smooth'}); });
+  rail.addEventListener('scroll',syncArrows,{passive:true});
+  window.addEventListener('resize',syncArrows);
+  syncArrows();
+
+  var dragging=false, sx=0, sl=0, moved=0;
+  rail.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='mouse' && e.button!==0) return;
+    dragging=true; moved=0; sx=e.clientX; sl=rail.scrollLeft;
+    rail.classList.add('drag');
+  });
+  rail.addEventListener('pointermove',function(e){
+    if(!dragging) return;
+    var dx=e.clientX-sx; moved=Math.abs(dx);
+    rail.scrollLeft=sl-dx;
+  });
+  function endDrag(){ if(!dragging) return; dragging=false; rail.classList.remove('drag'); syncArrows(); }
+  rail.addEventListener('pointerup',endDrag);
+  rail.addEventListener('pointercancel',endDrag);
+  rail.addEventListener('pointerleave',endDrag);
+  rail.addEventListener('click',function(e){ if(moved>8){ e.preventDefault(); moved=0; } },true);
+
+  /* ── stat counters ── */
+  var stats=D.getElementById('stats');
+  function runStats(){
+    [].forEach.call(stats.querySelectorAll('b'),function(el){
+      var to=+el.dataset.to, sfx=el.dataset.suffix||'', t0=null, dur=1400;
+      function tick(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1), e=1-Math.pow(1-p,3);
+        el.textContent=faNum(Math.round(to*e))+sfx;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var io3=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ runStats(); io3.unobserve(stats); } });
+    },{threshold:.4});
+    io3.observe(stats);
+  }
+
+  /* ── newsletter ── */
+  var nlForm=D.getElementById('nlForm'), nlEmail=D.getElementById('nlEmail'), nlMsg=D.getElementById('nlMsg');
+  nlForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=nlEmail.value.trim();
+    var ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    nlMsg.className='msg '+(ok?'ok':'err');
+    nlEmail.setAttribute('aria-invalid', ok?'false':'true');
+    if(ok){ nlMsg.textContent='ثبت شد — تورهای جدید را برایت می‌فرستیم.'; nlEmail.value=''; nlEmail.removeAttribute('aria-invalid'); }
+    else { nlMsg.textContent= v? 'ایمیل معتبر نیست. نمونه: name@mail.com' : 'ایمیلت را وارد کن.'; nlEmail.focus(); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F5F5;font-family:Vazirmatn,Tahoma,sans-serif}
+a{color:#262626;text-decoration:none}
+a:hover{color:#737373}
+</style>
+</helmet>
+
+<div style="direction:rtl;padding:40px 48px 80px;display:flex;flex-direction:column;gap:56px;font-family:Vazirmatn,Tahoma,sans-serif">
+
+  <div style="display:flex;flex-direction:column;gap:16px;max-width:1000px">
+    <div style="font:500 28px Vazirmatn,sans-serif;color:#262626">فاز ۵ — تکمیل</div>
+    <div style="font:400 14px/1.8 Vazirmatn,sans-serif;color:#737373">شش صفحه‌ی باقی‌مانده‌ی بریف، به‌علاوه‌ی داشبورد ادمین پلتفرم (سطح چهارم که در اسناد ریپو هست و توافق شد یک فریم برایش ساخته شود).</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="#s1" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۱ پرداخت‌ها</a>
+      <a href="#s2" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۲ گزارش‌ها</a>
+      <a href="#s3" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۳ تنظیمات سازمان</a>
+      <a href="#s4" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۴ اعضا</a>
+      <a href="#s5" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۵ پروفایل مشتری</a>
+      <a href="#s6" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۶ مقصدها</a>
+      <a href="#s7" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">۵-۷ ادمین پلتفرم</a>
+      <a href="Phase4.dc.html" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#737373;background:#F5F5F5">← فاز ۴</a>
+      <a href="Components.dc.html" style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#737373;background:#F5F5F5">← کامپوننت‌ها</a>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۱ پرداخت‌ها ═══ -->
+  <div id="s1" data-screen-label="۵-۱ پرداخت‌ها" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">کنسول آژانس — پرداخت‌ها</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/app/payments — دسکتاپ ۱۴۴۰</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box;display:flex">
+        <div style="flex:none;width:240px;background:#F5F5F5;border-left:1px solid #D4D4D4;box-sizing:border-box;padding:16px 8px">
+          <div style="padding:0 8px 16px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;gap:8px">
+            <div style="width:32px;height:32px;background:#E5E5E5;border-radius:4px"></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس</span></div>
+          </div>
+          <div style="padding-top:8px;display:flex;flex-direction:column;gap:4px">
+            <a href="Phase4.dc.html#r1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">داشبورد</span></a>
+            <a href="Phase3.dc.html#q1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">صف رزرو</span></a>
+            <a href="Phase3.dc.html#q3" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تورها</span></a>
+            <a href="Phase4.dc.html#r2" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مشتریان</span></a>
+            <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+            <div style="padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#737373">منابع</div>
+            <a href="Phase4.dc.html#r4" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">هتل‌ها</span></a>
+            <a href="Phase4.dc.html#r4" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">حمل‌ونقل</span></a>
+            <a href="Phase4.dc.html#r5" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">راهنمایان تور</span></a>
+            <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+            <div style="padding:8px 12px;background:#E5E5E5;border-radius:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">پرداخت‌ها</span></div>
+            <a href="#s2" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">گزارش‌ها</span></a>
+            <a href="#s3" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تنظیمات</span></a>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+          <div style="height:56px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 24px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">پرداخت‌ها</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس ← پرداخت‌ها</span></div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="width:264px;border:1px solid #D4D4D4;border-radius:4px;padding:6px 12px;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">شماره پیگیری یا شماره رزرو</span></div>
+              <div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 16px;font:400 14px Vazirmatn,sans-serif;color:#262626">خروجی اکسل</div>
+            </div>
+          </div>
+          <div style="padding:16px 24px;display:flex;gap:16px;border-bottom:1px solid #D4D4D4">
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:4px;padding:12px 16px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">دریافتی مرداد</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۸۴۰ میلیون</span></div>
+            <div style="flex:1;border:1px solid #262626;border-radius:4px;padding:12px 16px;display:flex;flex-direction:column;gap:4px;background:#F5F5F5"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">منتظر تأیید دستی</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۲</span></div>
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:4px;padding:12px 16px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مانده‌ی وصول‌نشده</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۲۲۵ میلیون</span></div>
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:4px;padding:12px 16px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">بازپرداخت مرداد</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۳۶ میلیون</span></div>
+          </div>
+          <div style="padding:16px 24px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:flex-end;gap:12px">
+            <div style="width:184px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">وضعیت تراکنش</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 10px;background:#FFFFFF;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">همه</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+            <div style="width:184px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">روش پرداخت</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 10px;background:#FFFFFF;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">همه</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+            <div style="width:224px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">بازه‌ی تاریخ</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 10px;background:#FFFFFF;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۱ تا ۱۳ مرداد ۱۴۰۵</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path></svg></div></div>
+            <div style="width:184px;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تور</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 10px;background:#FFFFFF;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">همه‌ی تورها</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+            <div style="flex:1"></div>
+            <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">۳۸ تراکنش</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:12px">
+            <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+              <div style="height:48px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373">
+                <span style="width:120px">شماره پیگیری</span><span style="width:104px">رزرو</span><span style="flex:1;min-width:0">مشتری</span><span style="width:136px">مبلغ</span><span style="width:144px">روش</span><span style="width:144px">تاریخ</span><span style="width:152px">وضعیت</span><span style="width:32px"></span>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">PAY-۷۷۴۱۲۹</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#262626">RSV-۱۰۲۴</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۱</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">۹۰٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">درگاه اینترنتی</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱۳ مرداد — ۱۱:۰۸</span><span style="width:152px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">SUCCESS</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;background:#F5F5F5">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">PAY-۷۷۴۱۳۰</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#262626">RSV-۱۰۲۷</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۲</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">۵۶٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">کارت به کارت</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱۳ مرداد — ۰۹:۳۰</span><span style="width:152px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">PENDING_REVIEW</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;background:#F5F5F5">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">PAY-۷۷۴۱۲۲</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#262626">RSV-۱۰۲۲</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۱۰</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">۴۵٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">کارت به کارت</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱۲ مرداد — ۱۸:۱۵</span><span style="width:152px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">PENDING_REVIEW</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">PAY-۷۷۴۱۰۸</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#262626">RSV-۱۰۲۰</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۵</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۸۰٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">درگاه اینترنتی</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۸ مرداد — ۱۴:۰۲</span><span style="width:152px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">SUCCESS</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">PAY-۷۷۴۰۹۱</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#737373">RSV-۱۰۰۴</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۹</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">۱۰۸٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">درگاه اینترنتی</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱ مرداد — ۱۰:۴۵</span><span style="width:152px"><span style="border:1px dashed #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">REFUNDED</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+              <div style="height:48px;display:flex;align-items:center;padding:0 16px;gap:16px">
+                <span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">PAY-۷۷۴۰۷۷</span><a href="Phase3.dc.html#q2" style="width:104px;font:400 14px Vazirmatn,sans-serif;color:#737373">RSV-۰۹۹۱</a><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">مشتری نمونه ۱۱</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">۲۸٬۰۰۰٬۰۰۰</span><span style="width:144px;font:400 14px Vazirmatn,sans-serif;color:#737373">درگاه اینترنتی</span><span style="width:144px;font:400 12px Vazirmatn,sans-serif;color:#737373">۲۹ تیر — ۲۲:۱۰</span><span style="width:152px"><span style="border:1px dashed #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">FAILED</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نمایش ۱ تا ۶ از ۳۸ تراکنش</span>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="border:1px solid #D4D4D4;border-radius:4px;width:32px;height:32px;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
+                <span style="border:1px solid #262626;border-radius:4px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">۱</span>
+                <span style="border:1px solid #D4D4D4;border-radius:4px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font:400 14px Vazirmatn,sans-serif;color:#262626">۲</span>
+                <span style="border:1px solid #D4D4D4;border-radius:4px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font:400 14px Vazirmatn,sans-serif;color:#262626">۳</span>
+                <span style="border:1px solid #D4D4D4;border-radius:4px;width:32px;height:32px;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span style="position:absolute;top:88px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;top:152px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;top:376px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#F5F5F5">۳</span>
+        <span style="position:absolute;bottom:136px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۴</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این صفحه گزارشی است؛ آژانس تراکنش نمی‌سازد. تنها اقدام ممکن، تأیید یا رد پرداخت کارت‌به‌کارت است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">کارت «منتظر تأیید دستی» بوردر تیره دارد چون تنها عددی است که اقدام می‌خواهد؛ کلیک روی آن فیلتر وضعیت را روی PENDING_REVIEW می‌گذارد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">ردیف‌های منتظر تأیید با پس‌زمینه‌ی سطح دوم متمایز می‌شوند، نه با رنگ. منوی سه‌نقطه‌ی آن‌ها «مشاهده رسید»، «تأیید پرداخت» و «رد» دارد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">وضعیت‌های پایانی منفی (FAILED، REFUNDED) بوردر خط‌چین دارند — همان قاعده‌ی برچسب وضعیت رزرو.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">تأیید پرداخت کارت‌به‌کارت رزرو را به PAID می‌برد و ظرفیت را کم می‌کند — پس از مودال تأیید عبور می‌کند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">«مانده‌ی وصول‌نشده» جمع مبلغ رزروهای APPROVED و WAITING_FOR_PAYMENT است — پولی که هنوز نیامده ولی ظرفیت رویش نشسته.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۲ گزارش‌ها ═══ -->
+  <div id="s2" data-screen-label="۵-۲ گزارش‌ها" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">کنسول آژانس — گزارش‌ها</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/app/reports — دسکتاپ ۱۴۴۰</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box;display:flex">
+        <div style="flex:none;width:240px;background:#F5F5F5;border-left:1px solid #D4D4D4;box-sizing:border-box;padding:16px 8px">
+          <div style="padding:0 8px 16px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;gap:8px">
+            <div style="width:32px;height:32px;background:#E5E5E5;border-radius:4px"></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس</span></div>
+          </div>
+          <div style="padding-top:8px;display:flex;flex-direction:column;gap:4px">
+            <a href="Phase4.dc.html#r1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">داشبورد</span></a>
+            <a href="Phase3.dc.html#q1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">صف رزرو</span></a>
+            <a href="Phase3.dc.html#q3" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تورها</span></a>
+            <a href="Phase4.dc.html#r2" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مشتریان</span></a>
+            <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+            <a href="#s1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">پرداخت‌ها</span></a>
+            <div style="padding:8px 12px;background:#E5E5E5;border-radius:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">گزارش‌ها</span></div>
+            <a href="#s3" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تنظیمات</span></a>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+          <div style="height:56px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 24px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">گزارش‌ها</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس ← گزارش‌ها</span></div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 12px;display:flex;align-items:center;gap:8px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۱ فروردین تا ۱۳ مرداد ۱۴۰۵</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path></svg></div>
+              <div style="border:1px solid #262626;border-radius:4px;padding:6px 16px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">دریافت خروجی</div>
+            </div>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;gap:24px">
+              <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;flex-direction:column;gap:2px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">درآمد ماهانه</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">فقط پرداخت‌های موفق</span></div>
+                <div style="padding:16px"><div style="height:200px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">نمودار: درآمد ماهانه</div></div>
+              </div>
+              <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;flex-direction:column;gap:2px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">قیف وضعیت رزرو</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">درخواست ← تأیید ← پرداخت ← سفر</span></div>
+                <div style="padding:16px"><div style="height:200px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">نمودار: قیف وضعیت رزرو</div></div>
+              </div>
+              <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;flex-direction:column;gap:2px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">پرشدگی ظرفیت</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">میانگین به تفکیک مقصد</span></div>
+                <div style="padding:16px"><div style="height:200px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">نمودار: پرشدگی به تفکیک مقصد</div></div>
+              </div>
+            </div>
+            <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+              <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between">
+                <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">خلاصه به تفکیک تور</span>
+                <div style="display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مرتب‌سازی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 10px;background:#FFFFFF;display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#262626">بیشترین درآمد</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+              </div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373"><span style="flex:1;min-width:0">تور</span><span style="width:136px">مقصد</span><span style="width:96px">رزرو</span><span style="width:112px">مسافر</span><span style="width:120px">پرشدگی</span><span style="width:152px">درآمد</span><span style="width:120px">لغو / رد</span></div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><a href="Phase3.dc.html#q4" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">تور نمونه ۲</a><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">مقصد نمونه ب</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۹</span><span style="width:112px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۸</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">۹۰٪</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۳۵۲ میلیون</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">۱</span></div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><a href="Phase3.dc.html#q4" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">تور نمونه ۱</a><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">مقصد نمونه الف</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۵</span><span style="width:112px;font:400 14px Vazirmatn,sans-serif;color:#262626">۸</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">۴۰٪</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۲۲۵ میلیون</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">۰</span></div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><a href="Phase3.dc.html#q4" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">تور نمونه ۳</a><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">مقصد نمونه ج</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۸</span><span style="width:112px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۵</span><span style="width:120px;font:500 14px Vazirmatn,sans-serif;color:#262626">۱۰۰٪</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۹۶ میلیون</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">۲</span></div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><a href="Phase3.dc.html#q4" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">تور نمونه ۵</a><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">مقصد نمونه ب</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۶</span><span style="width:112px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۱</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">۷۹٪</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۴۴ میلیون</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">۰</span></div>
+              <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><a href="Phase3.dc.html#q4" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">تور نمونه ۴</a><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#737373">مقصد نمونه د</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۴</span><span style="width:112px;font:400 14px Vazirmatn,sans-serif;color:#262626">۶</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#262626">۲۵٪</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۰۸ میلیون</span><span style="width:120px;font:400 14px Vazirmatn,sans-serif;color:#737373">۱</span></div>
+              <div style="height:48px;background:#F5F5F5;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;min-width:0;font:500 14px Vazirmatn,sans-serif;color:#262626">جمع کل</span><span style="width:136px"></span><span style="width:96px;font:500 14px Vazirmatn,sans-serif;color:#262626">۳۲</span><span style="width:112px;font:500 14px Vazirmatn,sans-serif;color:#262626">۵۸</span><span style="width:120px;font:500 14px Vazirmatn,sans-serif;color:#262626">۶۷٪</span><span style="width:152px;font:500 14px Vazirmatn,sans-serif;color:#262626">۱٬۰۲۵ میلیون</span><span style="width:120px;font:500 14px Vazirmatn,sans-serif;color:#262626">۴</span></div>
+            </div>
+          </div>
+        </div>
+        <span style="position:absolute;top:16px;left:200px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;top:16px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;top:120px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۳</span>
+        <span style="position:absolute;bottom:24px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#F5F5F5">۴</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">انتخاب بازه‌ی تاریخ روی هر سه نمودار و جدول اثر می‌گذارد. بازه در URL می‌ماند تا گزارش قابل اشتراک باشد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">خروجی همان بازه و همان فیلترهای صفحه را می‌گیرد (CSV و PDF). نه بیشتر، نه کمتر.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">هر نمودار زیرعنوانی دارد که تعریف دقیق عدد را می‌گوید («فقط پرداخت‌های موفق») — بدون آن عدد قابل استناد نیست.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">ردیف جمع کل همیشه پایین جدول می‌ماند و با صفحه‌بندی جابه‌جا نمی‌شود — جمع کل بازه است نه صفحه.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این صفحه فقط برای مدیر سازمان است؛ کارمند آژانس آن را در سایدبار ندارد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">حالت خالی: اگر در بازه‌ی انتخابی داده‌ای نباشد، نمودارها جای خود را به متن «داده‌ای برای این بازه نیست» می‌دهند و بازه‌ی پیشنهادی نمایش داده می‌شود.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۳ تنظیمات سازمان ═══ -->
+  <div id="s3" data-screen-label="۵-۳ تنظیمات سازمان" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">کنسول آژانس — تنظیمات سازمان</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/app/settings/organization — دسکتاپ ۱۴۴۰</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box;display:flex">
+        <div style="flex:none;width:240px;background:#F5F5F5;border-left:1px solid #D4D4D4;box-sizing:border-box;padding:16px 8px">
+          <div style="padding:0 8px 16px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;gap:8px">
+            <div style="width:32px;height:32px;background:#E5E5E5;border-radius:4px"></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس</span></div>
+          </div>
+          <div style="padding-top:8px;display:flex;flex-direction:column;gap:4px">
+            <a href="Phase4.dc.html#r1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">داشبورد</span></a>
+            <a href="Phase3.dc.html#q1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">صف رزرو</span></a>
+            <a href="Phase3.dc.html#q3" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تورها</span></a>
+            <a href="#s1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">پرداخت‌ها</span></a>
+            <a href="#s2" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">گزارش‌ها</span></a>
+            <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+            <div style="padding:8px 12px;background:#E5E5E5;border-radius:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">تنظیمات</span></div>
+            <div style="padding:6px 24px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اطلاعات سازمان</span></div>
+            <a href="#s4" style="padding:6px 24px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">اعضا</span></a>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+          <div style="height:56px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 24px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">تنظیمات سازمان</span><div style="display:flex;align-items:center;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول</span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تنظیمات</span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg><span style="font:400 12px Vazirmatn,sans-serif;color:#262626">اطلاعات سازمان</span></div></div>
+            <span style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#737373">فقط مدیر سازمان</span>
+          </div>
+          <div style="padding:24px;display:flex;gap:24px;align-items:flex-start">
+            <div style="flex:1;display:flex;flex-direction:column;gap:16px;min-width:0">
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اطلاعات آژانس</span></div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+                  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+                    <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نام آژانس</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</div></div>
+                    <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نام انگلیسی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">Agency Alef</div></div>
+                    <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">شماره‌ی مجوز</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۲۳۴۵۶</div></div>
+                    <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">شناسه‌ی ملی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۰۱۰۱۲۳۴۵۶</div></div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">معرفی آژانس — در صفحه‌ی تورها به مشتری نمایش داده می‌شود</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:12px;height:80px;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:92%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:64%"></div></div></div>
+                </div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اطلاعات تماس</span></div>
+                <div style="padding:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تلفن ثابت</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">۰۲۱-۱۲۳۴۵۶۷۸</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">موبایل پشتیبانی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">۰۹۱۲۰۰۰۰۰۰۰</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">ایمیل پشتیبانی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">support@agency-alef.example</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">وب‌سایت</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">اختیاری</div></div>
+                  <div style="grid-column:span 2;display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">آدرس دفتر</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">آدرس نمونه — شهر نمونه</div></div>
+                </div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">قواعد پیش‌فرض رزرو</span></div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+                  <div style="display:flex;align-items:center;justify-content:space-between">
+                    <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مهلت پیش‌فرض پرداخت</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">هنگام تأیید هر رزرو قابل تغییر است</span></div>
+                    <div style="width:160px;border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۴۸ ساعت</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #D4D4D4;padding-top:16px">
+                    <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">پذیرش کارت به کارت</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">پرداخت دستی که نیاز به تأیید کارمند دارد</span></div>
+                    <div style="width:44px;height:24px;border:1px solid #262626;border-radius:4px;background:#F5F5F5;display:flex;align-items:center;justify-content:flex-start;padding:2px"><div style="width:18px;height:18px;background:#262626;border-radius:4px"></div></div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #D4D4D4;padding-top:16px">
+                    <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تأیید خودکار رزرو بعد از پرداخت</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">اگر خاموش باشد، هر رزرو پرداخت‌شده منتظر تأیید نهایی کارمند می‌ماند</span></div>
+                    <div style="width:44px;height:24px;border:1px solid #D4D4D4;border-radius:4px;background:#FFFFFF;display:flex;align-items:center;justify-content:flex-end;padding:2px"><div style="width:18px;height:18px;background:#E5E5E5;border-radius:4px"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:none;width:336px;display:flex;flex-direction:column;gap:16px">
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">لوگو</span></div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+                  <div style="position:relative;height:120px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden"><svg viewBox="0 0 304 120" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="304" y2="120" stroke="#D4D4D4" stroke-width="1"></line><line x1="304" y1="0" x2="0" y2="120" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">لوگوی آژانس</span></div>
+                  <div style="display:flex;gap:8px"><span style="flex:1;border:1px solid #D4D4D4;border-radius:4px;padding:8px;font:400 14px Vazirmatn,sans-serif;color:#262626;text-align:center">تغییر لوگو</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 16px;font:400 14px Vazirmatn,sans-serif;color:#737373">حذف</span></div>
+                  <span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">حداقل ۴۰۰ در ۴۰۰ پیکسل — در کارت تور و صفحه‌ی آژانس دیده می‌شود</span>
+                </div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">وضعیت آژانس در پلتفرم</span></div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">وضعیت</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">ACTIVE</span></div>
+                  <div style="display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">تاریخ عضویت</span><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۸ اسفند ۱۴۰۳</span></div>
+                  <div style="display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">تعداد اعضا</span><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۴ نفر</span></div>
+                  <span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373;border-top:1px solid #D4D4D4;padding-top:12px">تغییر این وضعیت فقط از سمت ادمین پلتفرم ممکن است.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #D4D4D4;background:#F5F5F5;padding:16px 24px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">آخرین تغییر: ۹ مرداد ۱۴۰۵ توسط نام کاربر</span>
+            <div style="display:flex;gap:8px">
+              <span style="border:1px solid #D4D4D4;border-radius:4px;padding:10px 24px;font:400 14px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">انصراف</span>
+              <span style="border:1px solid #262626;border-radius:4px;padding:10px 24px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#FFFFFF">ذخیره‌ی تغییرات</span>
+            </div>
+          </div>
+        </div>
+        <span style="position:absolute;top:16px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;bottom:200px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;bottom:24px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#F5F5F5">۳</span>
+        <span style="position:absolute;bottom:200px;left:400px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۴</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">کل بخش تنظیمات فقط برای مدیر سازمان دیده می‌شود. کارمند آژانس آیتم «تنظیمات» را در سایدبار ندارد — نه غیرفعال، اصلاً وجود ندارد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">دو کلید تنظیمات، رفتار کل جریان رزرو را عوض می‌کنند: خاموش بودن «تأیید خودکار» یعنی هر رزرو PAID در صف «منتظر اقدام شما» می‌نشیند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">نوار پایین ثابت است؛ تا وقتی تغییری ذخیره نشده، خروج از صفحه هشدار می‌دهد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">وضعیت آژانس فقط خواندنی است؛ تعلیق یا فعال‌سازی از داشبورد ادمین پلتفرم انجام می‌شود.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">تغییر مهلت پیش‌فرض پرداخت روی رزروهای قبلی اثری ندارد؛ فقط برای تأییدهای بعدی.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">خاموش کردن «کارت به کارت» این روش را از صفحه‌ی پرداخت مشتری حذف می‌کند، ولی رسیدهای در انتظار تأیید باقی می‌مانند.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۴ اعضا ═══ -->
+  <div id="s4" data-screen-label="۵-۴ اعضا" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">کنسول آژانس — اعضا</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/app/settings/members — دسکتاپ ۱۴۴۰ — مودال دعوت کلیک‌پذیر</span>
+      </div>
+      <div style="display:flex;gap:24px;align-items:flex-start">
+        <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box;display:flex">
+          <div style="flex:none;width:240px;background:#F5F5F5;border-left:1px solid #D4D4D4;box-sizing:border-box;padding:16px 8px">
+            <div style="padding:0 8px 16px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;gap:8px">
+              <div style="width:32px;height:32px;background:#E5E5E5;border-radius:4px"></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول آژانس</span></div>
+            </div>
+            <div style="padding-top:8px;display:flex;flex-direction:column;gap:4px">
+              <a href="Phase4.dc.html#r1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">داشبورد</span></a>
+              <a href="Phase3.dc.html#q1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">صف رزرو</span></a>
+              <a href="#s1" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">پرداخت‌ها</span></a>
+              <a href="#s2" style="padding:8px 12px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">گزارش‌ها</span></a>
+              <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+              <div style="padding:8px 12px;background:#E5E5E5;border-radius:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">تنظیمات</span></div>
+              <a href="#s3" style="padding:6px 24px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">اطلاعات سازمان</span></a>
+              <div style="padding:6px 24px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اعضا</span></div>
+            </div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+            <div style="height:56px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 24px">
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">اعضا</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کنسول ← تنظیمات ← اعضا</span></div>
+              <div onClick="{{ openInvite }}" style="cursor:pointer;border:1px solid #262626;border-radius:4px;padding:6px 16px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">دعوت عضو جدید</div>
+            </div>
+            <div style="padding:24px;display:flex;flex-direction:column;gap:16px">
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="height:48px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373"><span style="width:48px"></span><span style="flex:1;min-width:0">نام</span><span style="width:264px">ایمیل</span><span style="width:160px">نقش</span><span style="width:152px">آخرین ورود</span><span style="width:136px">وضعیت</span><span style="width:32px"></span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                  <span style="width:48px"><span style="position:relative;display:block;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></span></span>
+                  <span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">نام کاربر (شما)</span><span style="width:264px;font:400 14px Vazirmatn,sans-serif;color:#737373">owner@agency-alef.example</span><span style="width:160px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">مدیر سازمان</span></span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">امروز — ۰۹:۱۲</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">فعال</span><span style="width:32px"></span>
+                </div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                  <span style="width:48px"><span style="position:relative;display:block;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></span></span>
+                  <span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">کارمند نمونه ۱</span><span style="width:264px;font:400 14px Vazirmatn,sans-serif;color:#737373">staff1@agency-alef.example</span><span style="width:160px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">کارمند</span></span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">دیروز — ۱۷:۴۰</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">فعال</span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+                </div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px">
+                  <span style="width:48px"><span style="position:relative;display:block;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></span></span>
+                  <span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">کارمند نمونه ۲</span><span style="width:264px;font:400 14px Vazirmatn,sans-serif;color:#737373">staff2@agency-alef.example</span><span style="width:160px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">کارمند</span></span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">۹ مرداد ۱۴۰۵</span><span style="width:136px;font:400 14px Vazirmatn,sans-serif;color:#262626">فعال</span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+                </div>
+                <div style="height:48px;display:flex;align-items:center;padding:0 16px;gap:16px">
+                  <span style="width:48px"><span style="position:relative;display:block;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></span></span>
+                  <span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">کارمند نمونه ۳</span><span style="width:264px;font:400 14px Vazirmatn,sans-serif;color:#737373">staff3@agency-alef.example</span><span style="width:160px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">کارمند</span></span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">هنوز وارد نشده</span><span style="width:136px"><span style="border:1px dashed #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">دعوت ارسال شد</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span>
+                </div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">تفاوت دو نقش</span></div>
+                <div style="height:40px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373"><span style="flex:1">دسترسی</span><span style="width:160px">مدیر سازمان</span><span style="width:160px">کارمند</span></div>
+                <div style="height:40px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;font:400 14px Vazirmatn,sans-serif;color:#262626">مدیریت رزرو و تغییر وضعیت</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span></div>
+                <div style="height:40px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;font:400 14px Vazirmatn,sans-serif;color:#262626">ساخت و انتشار تور</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span></div>
+                <div style="height:40px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;font:400 14px Vazirmatn,sans-serif;color:#262626">مشاهده‌ی گزارش‌ها و پرداخت‌ها</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#737373">ندارد</span></div>
+                <div style="height:40px;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;font:400 14px Vazirmatn,sans-serif;color:#262626">تنظیمات سازمان و مدیریت اعضا</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#262626">دارد</span><span style="width:160px;font:400 14px Vazirmatn,sans-serif;color:#737373">ندارد</span></div>
+              </div>
+            </div>
+          </div>
+          <span style="position:absolute;top:16px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+          <span style="position:absolute;top:128px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+          <span style="position:absolute;bottom:120px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۳</span>
+        </div>
+        <div style="flex:none;width:448px;display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 12px Vazirmatn,sans-serif;color:#737373">مودال دعوت عضو جدید</div>
+          <sc-if value="{{ inviteOpen }}" hint-placeholder-val="{{ true }}">
+            <div style="position:relative;border:1px solid #D4D4D4;border-radius:8px;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between">
+                <span style="font:500 20px Vazirmatn,sans-serif;color:#262626">دعوت عضو جدید</span>
+                <span onClick="{{ closeInvite }}" style="cursor:pointer;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">ایمیل</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">example@mail.com</div><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">لینک دعوت به این آدرس ارسال می‌شود و ۷ روز اعتبار دارد</span></div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نقش</span>
+                  <div style="border:1px solid #262626;border-radius:4px;padding:12px;display:flex;gap:12px;align-items:flex-start;background:#F5F5F5">
+                    <span style="flex:none;width:16px;height:16px;border:1px solid #262626;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px"><span style="width:8px;height:8px;border-radius:50%;background:#262626"></span></span>
+                    <div style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">کارمند</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">مدیریت رزرو و تور — بدون دسترسی به گزارش‌ها، پرداخت‌ها و تنظیمات</span></div>
+                  </div>
+                  <div style="border:1px solid #D4D4D4;border-radius:4px;padding:12px;display:flex;gap:12px;align-items:flex-start">
+                    <span style="flex:none;width:16px;height:16px;border:1px solid #D4D4D4;border-radius:50%;margin-top:2px"></span>
+                    <div style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مدیر سازمان</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">دسترسی کامل، شامل تنظیمات سازمان و مدیریت اعضا</span></div>
+                  </div>
+                </div>
+              </div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:16px;display:flex;gap:8px">
+                <div onClick="{{ closeInvite }}" style="cursor:pointer;border:1px solid #262626;border-radius:4px;padding:10px 24px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">ارسال دعوت</div>
+                <div onClick="{{ closeInvite }}" style="cursor:pointer;border:1px solid #D4D4D4;border-radius:4px;padding:10px 24px;font:400 14px Vazirmatn,sans-serif;color:#262626">انصراف</div>
+              </div>
+              <span style="position:absolute;top:16px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۴</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ inviteClosed }}" hint-placeholder-val="{{ false }}">
+            <div onClick="{{ openInvite }}" style="cursor:pointer;border:1px dashed #D4D4D4;border-radius:8px;padding:32px;display:flex;align-items:center;justify-content:center;font:400 14px Vazirmatn,sans-serif;color:#262626">نمایش مودال دعوت</div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این صفحه فقط برای مدیر سازمان است. آژانس باید همیشه حداقل یک مدیر سازمان فعال داشته باشد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">ردیف خود کاربر منوی سه‌نقطه ندارد — کسی نمی‌تواند نقش خودش را عوض کند یا خودش را حذف کند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">جدول تفاوت نقش‌ها روی صفحه می‌ماند، نه در tooltip — چون مدیر موقع دعوت باید بداند چه دسترسی‌ای می‌دهد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">دعوت با ایمیل انجام می‌شود، نه ساخت مستقیم کاربر — کاربر خودش رمز تعیین می‌کند. یک Membership بین کاربر و آژانس ساخته می‌شود، نه کاربر جدید.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">دعوت پذیرفته‌نشده بوردر خط‌چین دارد. منوی سه‌نقطه‌اش «ارسال دوباره» و «لغو دعوت» است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">حذف عضو، سابقه‌ی اقدام‌های او در تاریخچه‌ی وضعیت رزروها را پاک نمی‌کند؛ نامش باقی می‌ماند.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۵ پروفایل مشتری ═══ -->
+  <div id="s5" data-screen-label="۵-۵ پروفایل مشتری" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">مارکت‌پلیس — پروفایل مشتری</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/me/profile — دسکتاپ ۱۴۴۰</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box">
+        <div style="height:72px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 32px">
+          <div style="display:flex;align-items:center;gap:32px">
+            <a href="Phase1.dc.html" style="width:112px;height:32px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">لوگو</a>
+            <div style="display:flex;gap:24px"><a href="Phase1.dc.html" style="font:400 14px Vazirmatn,sans-serif;color:#737373">تورها</a><a href="#s6" style="font:400 14px Vazirmatn,sans-serif;color:#737373">مقصدها</a><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">درباره ما</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <a href="Phase2.dc.html" style="font:400 14px Vazirmatn,sans-serif;color:#262626">رزروهای من</a>
+            <div style="display:flex;align-items:center;gap:8px;border:1px solid #D4D4D4;border-radius:4px;padding:4px 8px 4px 12px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+              <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">نام کاربر</span>
+              <div style="position:relative;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:32px 32px 0"><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">پروفایل من</span></div>
+        <div style="padding:24px 32px 32px;display:flex;gap:32px;align-items:flex-start">
+          <div style="flex:none;width:240px;display:flex;flex-direction:column;gap:4px">
+            <div style="border:1px solid #262626;border-radius:4px;padding:10px 16px;background:#F5F5F5"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اطلاعات شخصی</span></div>
+            <div style="padding:10px 16px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تغییر رمز عبور</span></div>
+            <div style="padding:10px 16px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مسافران ذخیره‌شده</span></div>
+            <div style="padding:10px 16px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">اعلان‌ها</span></div>
+            <a href="Phase2.dc.html" style="padding:10px 16px;display:block"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">رزروهای من</span></a>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:24px;min-width:0">
+            <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+              <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">اطلاعات شخصی</span></div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+                <div style="display:flex;gap:16px;align-items:center;border-bottom:1px solid #D4D4D4;padding-bottom:16px">
+                  <div style="position:relative;flex:none;width:64px;height:64px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 64 64" style="position:absolute;inset:0;width:100%;height:100%"><line x1="12" y1="12" x2="52" y2="52" stroke="#D4D4D4" stroke-width="1"></line><line x1="52" y1="12" x2="12" y2="52" stroke="#D4D4D4" stroke-width="1"></line></svg></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر پروفایل</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">اختیاری — فقط برای خودتان دیده می‌شود</span></div>
+                  <span style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 16px;font:400 14px Vazirmatn,sans-serif;color:#262626">تغییر تصویر</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نام</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">نام نمونه</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">نام خانوادگی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">نام خانوادگی نمونه</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">کد ملی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#737373;background:#F5F5F5">۰۰۱۲۳۴۵۶۷۸</div><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">بعد از اولین رزرو قابل تغییر نیست</span></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تاریخ تولد</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۱۲ خرداد ۱۳۷۰</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path></svg></div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">ایمیل</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">customer1@mail.example</div><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تأیید شده</span></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">شماره موبایل</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#262626">۰۹۱۲۳۴۵۶۷۸۹</div><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تأیید نشده — ارسال کد تأیید</span></div>
+                  <div style="grid-column:span 2;display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">شماره پاسپورت</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">برای رزرو تور خارجی لازم است</div></div>
+                </div>
+                <div style="display:flex;gap:8px;border-top:1px solid #D4D4D4;padding-top:16px">
+                  <span style="border:1px solid #262626;border-radius:4px;padding:10px 24px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">ذخیره‌ی تغییرات</span>
+                  <span style="border:1px solid #D4D4D4;border-radius:4px;padding:10px 24px;font:400 14px Vazirmatn,sans-serif;color:#262626">انصراف</span>
+                </div>
+              </div>
+            </div>
+            <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+              <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">تغییر رمز عبور</span></div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">رمز فعلی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">رمز فعلی</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">رمز جدید</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">حداقل ۸ کاراکتر</div></div>
+                  <div style="display:flex;flex-direction:column;gap:6px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تکرار رمز جدید</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 12px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4">تکرار رمز جدید</div></div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #D4D4D4;padding-top:16px">
+                  <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">با تغییر رمز، از همه‌ی دستگاه‌های دیگر خارج می‌شوید</span>
+                  <span style="border:1px solid #D4D4D4;border-radius:4px;padding:10px 24px;font:400 14px Vazirmatn,sans-serif;color:#D4D4D4;background:#F5F5F5">تغییر رمز</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:32px;background:#F5F5F5;border-top:1px solid #D4D4D4;display:flex;gap:64px">
+          <div style="width:240px;display:flex;flex-direction:column;gap:16px"><div style="width:112px;height:32px;background:#E5E5E5;border-radius:4px"></div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:100%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:64%"></div></div></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">مسافران</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">جستجوی تور</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">مقصدها</span></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس‌ها</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">ثبت‌نام آژانس</span></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">پشتیبانی</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">تماس با ما</span></div>
+        </div>
+        <span style="position:absolute;top:200px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;top:420px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;top:520px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۳</span>
+        <span style="position:absolute;bottom:216px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۴</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">ناوبری کناری در سمت راست است و پروفایل زیرمجموعه‌ی مارکت‌پلیس می‌ماند — هدر و فوتر همان کامپوننت مشترک است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">کد ملی بعد از اولین رزرو قفل می‌شود چون روی اسناد سفر ثبت شده؛ تغییرش باید از طریق پشتیبانی انجام شود.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">وضعیت تأیید ایمیل و موبایل زیر فیلد به‌صورت متن می‌آید، نه با آیکون یا رنگ. موبایل تأییدنشده لینک «ارسال کد تأیید» می‌گیرد.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">دکمه‌ی تغییر رمز تا وقتی هر سه فیلد پر و دو رمز جدید یکسان نشده غیرفعال است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">تغییر اطلاعات پروفایل روی رزروهای ثبت‌شده اثری ندارد؛ اطلاعات مسافران در لحظه‌ی رزرو کپی می‌شوند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">آیتم «مسافران ذخیره‌شده» اطلاعات همسفرهای قبلی را نگه می‌دارد تا در رزرو بعدی با یک کلیک اضافه شوند. صفحه‌اش در فهرست بریف نیست — اگر لازم است بگو.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۶ مقصدها ═══ -->
+  <div id="s6" data-screen-label="۵-۶ مقصدها" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">مارکت‌پلیس — مقصدها</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/destinations — دسکتاپ ۱۴۴۰</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box">
+        <div style="height:72px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 32px">
+          <div style="display:flex;align-items:center;gap:32px">
+            <a href="Phase1.dc.html" style="width:112px;height:32px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">لوگو</a>
+            <div style="display:flex;gap:24px"><a href="Phase1.dc.html" style="font:400 14px Vazirmatn,sans-serif;color:#737373">تورها</a><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">مقصدها</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">درباره ما</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:4px;padding:8px 16px;font:400 14px Vazirmatn,sans-serif;color:#262626">ثبت‌نام</a>
+            <a href="Phase1.dc.html" style="border:1px solid #262626;border-radius:4px;padding:8px 16px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">ورود</a>
+          </div>
+        </div>
+        <div style="padding:32px 32px 0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font:500 28px Vazirmatn,sans-serif;color:#262626">مقصدها</span>
+            <div style="width:560px;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:100%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:56%"></div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;gap:8px">
+              <span style="border:1px solid #262626;border-radius:4px;padding:4px 16px;font:500 14px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">همه</span>
+              <span style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 16px;font:400 14px Vazirmatn,sans-serif;color:#737373">داخلی</span>
+              <span style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 16px;font:400 14px Vazirmatn,sans-serif;color:#737373">خارجی</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">۸ مقصد فعال</span>
+              <div style="display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مرتب‌سازی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 10px;display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#262626">بیشترین تور</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:24px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه الف</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">داخلی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:100%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:62%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۱۴ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۱۹٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه ب</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">خارجی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:92%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:54%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۹ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۷۲٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه ج</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">داخلی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:86%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:48%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۶ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۲۸٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه د</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">خارجی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:96%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:60%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۴ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۳۶٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه ه</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">داخلی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:88%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:52%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۳ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۲۲٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه و</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">خارجی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:90%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:44%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۳ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۸۴٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <a href="Phase1.dc.html" style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;display:block">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">مقصد نمونه ز</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">داخلی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:84%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:58%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۲ تور فعال</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">از ۳۱٬۰۰۰٬۰۰۰ تومان</span></div>
+            </div>
+          </a>
+          <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden;opacity:1">
+            <div style="position:relative;height:176px;background:#E5E5E5;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 320 176" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="0" x2="320" y2="176" stroke="#D4D4D4" stroke-width="1"></line><line x1="320" y1="0" x2="0" y2="176" stroke="#D4D4D4" stroke-width="1"></line></svg><span style="position:relative;background:#E5E5E5;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">تصویر مقصد</span></div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font:500 16px Vazirmatn,sans-serif;color:#737373">مقصد نمونه ح</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:0 6px;font:400 12px Vazirmatn,sans-serif;color:#737373">خارجی</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:76%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:40%"></div></div>
+              <div style="border-top:1px solid #D4D4D4;padding-top:8px;display:flex;align-items:baseline;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">تور فعالی ندارد</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">—</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:32px;background:#F5F5F5;border-top:1px solid #D4D4D4;display:flex;gap:64px">
+          <div style="width:240px;display:flex;flex-direction:column;gap:16px"><div style="width:112px;height:32px;background:#E5E5E5;border-radius:4px"></div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#E5E5E5;border-radius:4px;width:100%"></div><div style="height:8px;background:#E5E5E5;border-radius:4px;width:64%"></div></div></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">مسافران</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">جستجوی تور</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">مقصدها</span></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس‌ها</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">ثبت‌نام آژانس</span></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">پشتیبانی</span><span style="font:400 14px Vazirmatn,sans-serif;color:#737373">تماس با ما</span></div>
+        </div>
+        <span style="position:absolute;top:216px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;top:400px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;bottom:216px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۳</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این صفحه ویترین است، نه جستجو: کلیک روی هر کارت به نتایج جستجو با فیلتر همان مقصد می‌رود.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">«تور فعال» یعنی تور PUBLISHED با تاریخ حرکت در آینده و ظرفیت باقی‌مانده — تورهای همه‌ی آژانس‌ها با هم شمرده می‌شوند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">مقصد بدون تور فعال حذف نمی‌شود، ولی با متن ثانویه و بدون لینک نمایش داده می‌شود (کارت آخر) — و در مرتب‌سازی همیشه ته لیست است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">«از … تومان» ارزان‌ترین قیمت میان همه‌ی تورهای فعال آن مقصد است، از هر آژانسی.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">همین گرید مقصد در بخش «مقصدهای محبوب» لندینگ هم استفاده می‌شود، فقط اسلایدر افقی است.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">تصمیم باز فاز ۴ اینجا هم اثر دارد: اگر مقصدها لیست مشترک پلتفرم باشند، این صفحه یک منبع دارد؛ اگر هر آژانس مقصد خودش را بسازد، مقصدهای تکراری باید ادغام شوند.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ ۵-۷ داشبورد ادمین پلتفرم ═══ -->
+  <div id="s7" data-screen-label="۵-۷ داشبورد ادمین پلتفرم" style="display:flex;gap:24px;align-items:flex-start;scroll-margin-top:24px">
+    <div style="flex:none">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <span style="font:500 14px Vazirmatn,sans-serif;color:#262626">ادمین پلتفرم — داشبورد</span>
+        <span style="font:400 12px Vazirmatn,sans-serif;color:#737373">/admin — دسکتاپ ۱۴۴۰ — خارج از فهرست بریف، طبق توافق</span>
+      </div>
+      <div style="position:relative;width:1440px;border:1px solid #D4D4D4;background:#FFFFFF;box-sizing:border-box;display:flex">
+        <div style="flex:none;width:240px;background:#F5F5F5;border-left:1px solid #D4D4D4;box-sizing:border-box;padding:16px 8px">
+          <div style="padding:0 8px 16px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;gap:8px">
+            <div style="width:32px;height:32px;background:#E5E5E5;border-radius:4px"></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">TravelOps</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">ادمین پلتفرم</span></div>
+          </div>
+          <div style="padding-top:8px;display:flex;flex-direction:column;gap:4px">
+            <div style="padding:8px 12px;background:#E5E5E5;border-radius:4px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">داشبورد</span></div>
+            <div style="padding:8px 12px;display:flex;justify-content:space-between"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس‌ها</span><span style="border:1px solid #737373;border-radius:4px;padding:0 6px;font:500 12px Vazirmatn,sans-serif;color:#262626">۲</span></div>
+            <div style="padding:8px 12px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">کاربران</span></div>
+            <div style="padding:8px 12px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تورها</span></div>
+            <div style="padding:8px 12px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">مقصدهای مشترک</span></div>
+            <div style="height:1px;background:#D4D4D4;margin:8px 12px"></div>
+            <div style="padding:8px 12px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">گزارش‌های پلتفرم</span></div>
+            <div style="padding:8px 12px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">تنظیمات پلتفرم</span></div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+          <div style="height:56px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between;padding:0 24px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 16px Vazirmatn,sans-serif;color:#262626">داشبورد پلتفرم</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">ادمین پلتفرم</span></div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="border:1px solid #D4D4D4;border-radius:4px;padding:6px 12px;display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#262626">مرداد ۱۴۰۵</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div>
+              <div style="position:relative;width:32px;height:32px;background:#E5E5E5;border-radius:50%;overflow:hidden"><svg viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><line x1="6" y1="6" x2="26" y2="26" stroke="#D4D4D4" stroke-width="1"></line><line x1="26" y1="6" x2="6" y2="26" stroke="#D4D4D4" stroke-width="1"></line></svg></div>
+            </div>
+          </div>
+          <div style="padding:24px;display:flex;gap:16px">
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">آژانس فعال</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۱۸</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">۱ تعلیق‌شده</span></div>
+            <div style="flex:1;border:1px solid #262626;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px;background:#F5F5F5"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">درخواست عضویت آژانس</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۲</span><span style="font:500 12px Vazirmatn,sans-serif;color:#262626">قدیمی‌ترین: ۴ روز</span></div>
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مشتری ثبت‌نام‌شده</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۱٬۲۴۰</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">۶۸ نفر در مرداد</span></div>
+            <div style="flex:1;border:1px solid #D4D4D4;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">گردش مالی مرداد</span><span style="font:500 28px Vazirmatn,sans-serif;color:#262626">۹٬۴۰۰ میلیون</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">تیر: ۷٬۸۰۰ میلیون</span></div>
+          </div>
+          <div style="padding:0 24px 24px;display:flex;gap:24px;align-items:flex-start">
+            <div style="flex:1;display:flex;flex-direction:column;gap:24px;min-width:0">
+              <div style="border:1px solid #262626;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">درخواست عضویت آژانس — منتظر بررسی شما</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">۲ درخواست</span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373"><span style="flex:1;min-width:0">نام آژانس</span><span style="width:176px">شماره مجوز</span><span style="width:152px">تاریخ درخواست</span><span style="width:96px">در انتظار</span><span style="width:200px">اقدام</span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس نمونه ط</span><span style="width:176px;font:400 14px Vazirmatn,sans-serif;color:#262626">۹۹۸۸۷۷</span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">۹ مرداد ۱۴۰۵</span><span style="width:96px;font:500 12px Vazirmatn,sans-serif;color:#262626">۴ روز</span><span style="width:200px;display:flex;gap:6px"><span style="border:1px solid #262626;border-radius:4px;padding:4px 12px;font:500 12px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">بررسی مدارک</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626">رد</span></span></div>
+                <div style="height:48px;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس نمونه ی</span><span style="width:176px;font:400 14px Vazirmatn,sans-serif;color:#262626">۶۶۵۵۴۴</span><span style="width:152px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱۲ مرداد ۱۴۰۵</span><span style="width:96px;font:400 12px Vazirmatn,sans-serif;color:#737373">۱ روز</span><span style="width:200px;display:flex;gap:6px"><span style="border:1px solid #262626;border-radius:4px;padding:4px 12px;font:500 12px Vazirmatn,sans-serif;color:#262626;background:#F5F5F5">بررسی مدارک</span><span style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 12px;font:400 12px Vazirmatn,sans-serif;color:#262626">رد</span></span></div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;justify-content:space-between"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">آژانس‌ها</span><div style="display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مرتب‌سازی</span><div style="border:1px solid #D4D4D4;border-radius:4px;padding:4px 10px;background:#FFFFFF;display:flex;align-items:center;gap:8px"><span style="font:400 12px Vazirmatn,sans-serif;color:#262626">بیشترین گردش مالی</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></div></div></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px;font:500 12px Vazirmatn,sans-serif;color:#737373"><span style="width:48px"></span><span style="flex:1;min-width:0">نام آژانس</span><span style="width:96px">تور فعال</span><span style="width:96px">رزرو مرداد</span><span style="width:152px">گردش مالی مرداد</span><span style="width:120px">وضعیت</span><span style="width:32px"></span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="width:48px"><span style="display:block;width:32px;height:32px;background:#E5E5E5;border-radius:4px"></span></span><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس ب</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۴</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۴۱</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱٬۸۲۰ میلیون</span><span style="width:120px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">ACTIVE</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="width:48px"><span style="display:block;width:32px;height:32px;background:#E5E5E5;border-radius:4px"></span></span><a href="#s3" style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس الف</a><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۹</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۳۲</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱٬۰۲۵ میلیون</span><span style="width:120px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">ACTIVE</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span></div>
+                <div style="height:48px;border-bottom:1px solid #D4D4D4;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="width:48px"><span style="display:block;width:32px;height:32px;background:#E5E5E5;border-radius:4px"></span></span><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#262626">آژانس ج</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۶</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#262626">۱۹</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#262626">۶۴۰ میلیون</span><span style="width:120px"><span style="border:1px solid #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#262626">ACTIVE</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span></div>
+                <div style="height:48px;display:flex;align-items:center;padding:0 16px;gap:16px"><span style="width:48px"><span style="display:block;width:32px;height:32px;background:#E5E5E5;border-radius:4px"></span></span><span style="flex:1;min-width:0;font:400 14px Vazirmatn,sans-serif;color:#737373">آژانس د</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#737373">۰</span><span style="width:96px;font:400 14px Vazirmatn,sans-serif;color:#737373">۰</span><span style="width:152px;font:400 14px Vazirmatn,sans-serif;color:#737373">۰</span><span style="width:120px"><span style="border:1px dashed #D4D4D4;border-radius:4px;padding:2px 8px;font:400 12px Vazirmatn,sans-serif;color:#737373">SUSPENDED</span></span><span style="width:32px;display:flex;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></span></div>
+              </div>
+            </div>
+            <div style="flex:none;width:376px;display:flex;flex-direction:column;gap:24px">
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4;display:flex;flex-direction:column;gap:2px"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">گردش مالی پلتفرم</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مجموع همه‌ی آژانس‌ها</span></div>
+                <div style="padding:16px"><div style="height:200px;background:#E5E5E5;border-radius:4px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#737373">نمودار: گردش مالی ماهانه</div></div>
+              </div>
+              <div style="border:1px solid #D4D4D4;border-radius:8px;overflow:hidden">
+                <div style="padding:12px 16px;background:#F5F5F5;border-bottom:1px solid #D4D4D4"><span style="font:500 14px Vazirmatn,sans-serif;color:#262626">نیازمند توجه</span></div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+                  <div style="display:flex;flex-direction:column;gap:4px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۳ آژانس بیش از ۳۰ روز رزروی نداشته‌اند</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">مشاهده لیست</span></div>
+                  <div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #D4D4D4;padding-top:16px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۵ رزرو بیش از ۷۲ ساعت در PENDING مانده</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">در ۲ آژانس — مشاهده لیست</span></div>
+                  <div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #D4D4D4;padding-top:16px"><span style="font:400 14px Vazirmatn,sans-serif;color:#262626">۴ مقصد تکراری در لیست آژانس‌ها</span><span style="font:400 12px Vazirmatn,sans-serif;color:#737373">پیشنهاد ادغام</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span style="position:absolute;top:88px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۱</span>
+        <span style="position:absolute;top:216px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۲</span>
+        <span style="position:absolute;top:400px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۳</span>
+        <span style="position:absolute;bottom:200px;left:16px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۴</span>
+        <span style="position:absolute;bottom:120px;left:432px;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB;background:#FFFFFF">۵</span>
+      </div>
+    </div>
+    <div style="flex:none;width:248px;padding-top:30px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px Vazirmatn,sans-serif;color:#737373">یادداشت‌های طراحی</span><span style="font:400 12px/1.6 Vazirmatn,sans-serif;color:#D4D4D4">شماره‌دار = نشانه‌گذاری‌شده روی فریم · — = نکته‌ی عمومی</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۱</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این سطح چهارم است و چیدمانش عمداً همان کنسول آژانس است (سایدبار راست) — ولی داده‌ها بدون مرز مستأجرند: ادمین همه‌ی آژانس‌ها را می‌بیند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۲</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">همان الگوی صف کاری فاز ۳ اینجا هم برقرار است: بخش «منتظر بررسی شما» بالا و با بوردر تیره، بقیه پایین.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۳</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">ادمین به داده‌ی عملیاتی آژانس (لیست مسافران، یادداشت داخلی) دسترسی ندارد؛ فقط آمار تجمیعی و وضعیت آژانس.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۴</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">تعلیق آژانس تورهایش را از مارکت‌پلیس برمی‌دارد، ولی رزروهای در جریان لغو نمی‌شوند — کنسول برای پیگیری آن‌ها باز می‌ماند.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;border:1px solid #2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px Vazirmatn,sans-serif;color:#2563EB">۵</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">کارت «نیازمند توجه» جای هشدارهای سلامت پلتفرم است — آژانس‌های بی‌فعالیت، رزروهای معلق، مقصدهای تکراری.</span></div>
+      <div style="display:flex;gap:8px"><span style="flex:none;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font:400 12px Vazirmatn,sans-serif;color:#D4D4D4">—</span><span style="font:400 12px/1.7 Vazirmatn,sans-serif;color:#737373">این یک فریم است نه یک سطح کامل. اگر ادمین پلتفرم قرار است واقعاً ساخته شود، صفحه‌های آژانس‌ها، کاربران و تنظیمات پلتفرم باید جداگانه طراحی شوند — بگو تا در فاز بعد اضافه کنم.</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #D4D4D4;padding-top:24px;display:flex;flex-direction:column;gap:8px;max-width:800px">
+    <span style="font:500 16px Vazirmatn,sans-serif;color:#262626">پایان فاز ۵</span>
+    <span style="font:400 14px/1.8 Vazirmatn,sans-serif;color:#737373">شش صفحه‌ی بریف + یک فریم ادمین پلتفرم. با تأیید تو، فاز ۶ (ویو راهنمای تور — ۳ صفحه، دسکتاپ ۱۴۴۰) ساخته می‌شود و پروژه تمام است.</span>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { inviteOpen: true };
+  openInvite = () => this.setState({ inviteOpen: true });
+  closeInvite = () => this.setState({ inviteOpen: false });
+  renderVals() {
+    return {
+      inviteOpen: this.state.inviteOpen,
+      inviteClosed: !this.state.inviteOpen,
+      openInvite: this.openInvite,
+      closeInvite: this.closeInvite
+    };
+  }
+}
+</script>
+</body>
+</html>
