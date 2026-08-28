@@ -51,6 +51,5 @@ coverage.xml
 # Distribution
 dist/
 build/
-node_modules/
 *.egg-info/
 *.egg
