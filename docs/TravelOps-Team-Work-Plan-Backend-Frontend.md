@@ -230,121 +230,229 @@ Global destination merging = P2.
 
 ---
 
-# 5. تقسیم کار نهایی
+# 5. تقسیم کار نهایی — هشت مرحله
 
-## عضو Parsa — Identity, Organization & Integration
+## 5.0 قواعد این بخش
 
-### Backend
-- Custom User
-- Customer profile
-- JWT
-- Register/Login/Refresh
-- Organization
-- Membership
-- Roles
-- Permission architecture
-- Tenant Isolation helpers
-- Docker / env
-- CI
-- OpenAPI setup
+**واژه‌نامه.** در این سند «مرحله» یعنی بازه‌ی کاری تیم (۱ تا ۸). «فاز» فقط به گروه‌های صفحه در فایل‌های وایرفریم اشاره دارد (`Phase1..6.dc.html`). این دو را با هم اشتباه نگیرید.
 
-### Frontend P0
-- App bootstrap
-- Router
-- API client
-- Auth state
-- Protected routes
-- `/register`
-- `/login`
-- shared header / agency shell
-- `/me/reservations`
-- `/me/reservations/[id]`
+**قاعده‌ی تست چرخشی.** هیچ‌کس تست کد خودش را نمی‌نویسد:
 
-> داده‌ی Reservation از API عضو Ilya می‌آید؛ Parsa فقط Owner این UIهاست.
+```text
+پارسا  →  تست‌های مانی
+مانی   →  تست‌های ایلیا
+ایلیا  →  تست‌های پارسا
+```
 
-### Frontend P1
-- `/me/profile`
-- `/app`
-- `/app/customers`
-- `/app/customers/[id]`
-- `/app/settings/organization`
-- `/app/settings/members`
-- `/app/reports`
+همان زنجیره‌ی Review بخش ۱۳ است. هدف: هر سه نفر مجبور شوند API و کد همدیگر را واقعاً بخوانند.
 
-### P2
-- `/admin`
+**قاعده‌ی حضور.** هیچ مرحله‌ای بدون کار برای هر سه نفر بسته نمی‌شود.
 
-Reviewer: **Mani**
+**مرجع صفحه.** هر Route زیر، به یک فریم مشخص در وایرفریم گره خورده است. شماره‌ی فریم داخل پرانتز آمده. اگر فریم نداشت، صریح نوشته شده.
+
+**تصمیم‌های ثابت فرانت:**
+
+```text
+همه‌ی ۳۴ فریم فقط دسکتاپ ۱۴۴۰ هستند
+فونت Vazirmatn از npm (@fontsource/vazirmatn) — بدون CDN
+dir="rtl" روی سطح ریشه
+مرجع نهایی صفحه‌ی / فایل Landing.html است، نه فریم ۱-۱
+```
 
 ---
 
-## عضو Mani — Marketplace, Tours & Resources
+## مرحله ۱ — پایه و زیرساخت
 
-### Backend
-- Destination
-- Tour
-- Tour status
-- Itinerary
-- Hotel
-- Transportation
-- TourGuide
-- Search/filter
-- Publish rules
-- Public Tour APIs
-- Tenant filtering منابع
-- Tour tests
+**خروجی مرحله:** `docker compose up` بالا می‌آید، DRF جواب می‌دهد، Swagger باز می‌شود، فرانت خالی build می‌شود، CI روی هر PR سبز می‌شود.
 
-### Frontend P0
-- `/`
-- `/tours`
-- `/tours/[id]`
-- `/app/tours`
-- `/app/tours/[id]`
-- `/app/hotels`
-- `/app/transportation`
-- `/app/destinations`
-- `/app/guides`
+### پارسا
+- **Backend** — تکمیل `config/settings.py`: افزودن `rest_framework`، `drf_spectacular`، `corsheaders`، اپ‌های خودی به `INSTALLED_APPS`؛ اتصال PostgreSQL؛ env با `python-dotenv`؛ مسیر Swagger در `config/urls.py`؛ تکمیل `docker-compose.yml`؛ ساخت `.github/workflows/ci.yml` با ruff + pytest
+- **Frontend** — bootstrap پروژه `frontend/` با React + TypeScript + Vite؛ ساختار پوشه؛ ESLint/Prettier؛ نصب `@fontsource/vazirmatn`؛ استخراج توکن‌های رنگ و تایپوگرافی از `Components.dc.html` به `tokens.css`
+- **Tests** — تست‌های مانی
 
-### P1
-- `/destinations`
+### مانی
+- **Backend** — ساخت اپ `tours` (فقط `startapp` + ثبت)؛ ثبت تصمیم ساختار اپ‌ها در سند
+- **Frontend** — Router با React Router؛ دو Layout پوسته: `MarketplaceLayout` (کامپوننت ۱ هدر + ۲ فوتر) و `ConsoleLayout` (کامپوننت ۳ سایدبار راست + ۴ نوار بالایی)
+- **Tests** — تست‌های ایلیا
 
-### P2
-- `/guide`
-- `/guide/[tourId]`
-- `/guide/profile`
+### ایلیا
+- **Backend** — ساخت اپ `reservations` (خالی)؛ ماژول `states.py` فقط شامل ثابت نُه وضعیت و نقشه‌ی Transition معتبر
+- **Frontend** — کامپوننت‌های پایه از `Components.dc.html`: `Button` `Input` `Select` `Table` `Card` `Pagination` `StatusBadge` `EmptyState` `LoadingState` `ErrorState` `Modal` `ConfirmDialog`
+- **Tests** — تست‌های پارسا (smoke: بالا آمدن `/api/schema/`)
 
-Reviewer: **Ilya**
+**وابستگی:** ندارد. سه شاخه‌ی کاملاً موازی.
 
 ---
 
-## عضو Ilya — Booking, Reservation & Payment
+## مرحله ۲ — هویت و ایزوله‌سازی
 
-### Backend
-- Reservation
-- ReservationPassenger
-- StatusHistory
-- Transition service
-- Approve / Reject / Cancel
-- Mock payment
-- Capacity deduction by passenger count
-- Transaction / locking
-- Rollback
-- Concurrency tests
-- Overbooking prevention
-- Travel lifecycle
+**خروجی مرحله:** مشتری و آژانس ثبت‌نام می‌کنند، با JWT وارد می‌شوند، و کارمند آژانس A به هیچ داده‌ی آژانس B نمی‌رسد.
 
-### Frontend P0
-- `/booking/[tourId]`
-- `/booking/[tourId]/review`
-- `/me/payment/[id]`
-- payment success/failure
-- `/app/reservations`
-- `/app/reservations/[id]`
+### پارسا
+- **Backend** — `User` سفارشی، `Organization`، `Membership`، نقش‌ها؛ ثبت‌نام دومسیره (مشتری / آژانس)؛ `POST /auth/register` `/auth/login` `/auth/refresh` و `GET /auth/me`؛ کلاس‌های Permission؛ `TenantQuerySetMixin`
+- **Frontend** — `/register` (فریم ۱-۴ انتخاب نقش + فریم ۱-۴ فرم مشتری)؛ `/login` (فریم ۱-۵)؛ api client با interceptor برای refresh؛ `AuthContext`؛ `ProtectedRoute`
+- **Tests** — تست‌های مانی
 
-### P1
-- `/app/payments`
+> فرم ثبت‌نام آژانس فریم ندارد. طبق بخش ۱۶ همان فرم ساده ساخته شود.
 
-Reviewer: **Parsa**
+### مانی
+- **Backend** — مدل `Destination` با FK به Organization، به‌عنوان اولین مصرف‌کننده‌ی `TenantQuerySetMixin`
+- **Frontend** — حالت لاگین‌شده/نشده‌ی هدر و سایدبار؛ منوی کاربر؛ Redirect پس از ورود بر اساس نقش
+- **Tests** — تست‌های ایلیا
+
+### ایلیا
+- **Backend** — مدل `Customer` متصل به `User`
+- **Frontend** — لایه‌ی مشترک فرم و اعتبارسنجی؛ نگاشت خطای DRF به پیام فارسی
+- **Tests** — تست‌های پارسا: ثبت‌نام، ورود، refresh، `/auth/me`، رد شدن دسترسی Cross-tenant
+
+**وابستگی:** مانی و ایلیا منتظر merge شدن مدل‌های پارسا هستند. پارسا اول migration را بفرستد.
+
+---
+
+## مرحله ۳ — منابع آژانس
+
+**خروجی مرحله:** کارمند آژانس مقصد، هتل، حمل‌ونقل و راهنما را CRUD می‌کند و هر چهار مورد Tenant-scoped هستند.
+
+### مانی
+- **Backend** — `Hotel`، `Transportation`، `TourGuide` + تکمیل `Destination`؛ Serializer و ViewSet با فیلتر Organization؛ `CRUD /agency/destinations|hotels|transportation|guides`
+- **Frontend** — **یک صفحه‌ی ژنریک `ResourceListPage`** طبق فریم ۴-۴ «الگوی مدیریت منابع»، سپس چهار مصرف از همان: `/app/destinations` `/app/hotels` `/app/transportation` `/app/guides` (فریم ۴-۵ برای راهنمایان)
+- **Tests** — تست‌های ایلیا
+
+> وایرفریم عمداً برای هتل و حمل‌ونقل فریم جدا نساخته. چهار صفحه‌ی جداگانه ننویسید.
+
+### پارسا
+- **Backend** — تبدیل `TenantQuerySetMixin` به Mixin واقعی و اعمالش روی هر چهار ViewSet؛ Permission نقش (فقط Admin و Staff آژانس)
+- **Frontend** — `ConfirmDialog` واقعی برای حذف (کامپوننت ۱۱)؛ Toast مشترک
+- **Tests** — تست‌های مانی: CRUD هر چهار منبع + Cross-tenant برای هر چهار
+
+### ایلیا
+- **Backend** — مدل و migration `Reservation` و `ReservationPassenger` (فقط مدل، بدون API)
+- **Frontend** — تکمیل `Table`: مرتب‌سازی، صفحه‌بندی سروری، اتصال `EmptyState` و `LoadingState` (کامپوننت ۶، ۹، ۱۰، ۱۲)
+- **Tests** — تست‌های پارسا: Permission نقش‌ها
+
+**وابستگی:** مانی منتظر Mixin پارسا است.
+
+---
+
+## مرحله ۴ — تور و انتشار
+
+**خروجی مرحله:** آژانس تور DRAFT می‌سازد، برنامه سفر و هتل و راهنما وصل می‌کند، Publish می‌کند، و تور DRAFT برای هیچ‌کس بیرون از آژانس دیده نمی‌شود.
+
+### مانی
+- **Backend** — `Tour` با `status` (DRAFT / PUBLISHED / CLOSED)؛ `ItineraryItem`؛ قواعد Publish (ظرفیت، تاریخ، حداقل فیلدهای لازم)؛ `GET/POST /agency/tours`، `GET/PATCH /agency/tours/{id}`، `POST /agency/tours/{id}/publish`
+- **Frontend** — `/app/tours` (فریم ۳-۳)؛ `/app/tours/[id]` (فریم ۳-۴، فرم چندبخشی ساخت/ویرایش + دکمه Publish)
+- **Tests** — تست‌های ایلیا
+
+### پارسا
+- **Backend** — عبور `Tour` از Mixin ایزوله‌سازی؛ Permission انتشار فقط برای Admin آژانس
+- **Frontend** — `/app` اسکلت داشبورد (فریم ۴-۱) با کارت‌های عددی خالی؛ در مرحله ۸ پر می‌شود
+- **Tests** — تست‌های مانی: DRAFT برای آژانس دیگر نامرئی، Publish با فیلد ناقص رد شود، Cross-agency Tour access رد شود
+
+### ایلیا
+- **Backend** — فیلد ظرفیت روی `Tour` و متد فقط‌خواندنی `remaining_capacity` (هنوز بدون قفل)
+- **Frontend** — `StatusBadge` در دو نسخه: تور (سه وضعیت) و رزرو (نُه وضعیت) طبق کامپوننت ۷
+- **Tests** — تست‌های پارسا: Permission انتشار
+
+---
+
+## مرحله ۵ — مارکت‌پلیس عمومی
+
+**خروجی مرحله:** مهمان و مشتری تورهای PUBLISHED همه‌ی آژانس‌ها را می‌بینند، جستجو و فیلتر می‌کنند، و جزئیات تور را باز می‌کنند.
+
+### مانی
+- **Backend** — `GET /tours` با جستجو و فیلتر (مقصد، تاریخ، قیمت، ظرفیت)؛ `GET /tours/{id}`؛ `GET /destinations` عمومی ساخته‌شده از Destinationهای تورهای Published
+- **Frontend** — `/` (مرجع `Landing.html`)؛ `/tours` (فریم ۱-۲ + فریم حالت خالی)؛ `/tours/[id]` (فریم ۱-۳)؛ `/destinations` (فریم ۵-۶)
+- **Tests** — تست‌های ایلیا
+
+### پارسا
+- **Backend** — کارکرد این چهار Endpoint بدون توکن؛ Serializer عمومی جدا از Serializer کنسول تا هیچ فیلد داخلی آژانس لو نرود
+- **Frontend** — `TourCard` مشترک طبق کامپوننت ۵، شامل حالت «فقط N نفر ظرفیت باقی‌مانده»؛ عنوان و متای صفحه
+- **Tests** — تست‌های مانی: DRAFT نامرئی، PUBLISHED مرئی، جستجو و فیلتر، تور پرشده مخفی نشود ولی دکمه Disabled باشد
+
+### ایلیا
+- **Backend** — نمایش `remaining_capacity` در پاسخ عمومی تور
+- **Frontend** — کامپوننت جستجو و فیلتر مشترک + همگام‌سازی وضعیت با query string
+- **Tests** — تست‌های پارسا: نشت نکردن فیلدهای داخلی در Endpointهای عمومی
+
+---
+
+## مرحله ۶ — رزرو و مسافران
+
+**خروجی مرحله:** مشتری چند مسافر ثبت می‌کند، رزرو می‌سازد، و آن را در «رزروهای من» می‌بیند — **بدون اینکه ظرفیت تور تغییر کند**.
+
+### ایلیا
+- **Backend** — `Reservation`، `ReservationPassenger`، `ReservationStatusHistory`؛ سرویس Transition؛ `POST /reservations`؛ `GET /me/reservations`؛ `GET /me/reservations/{id}`
+- **Frontend** — `/booking/[tourId]` (فریم ۲-۱، فرم چندمسافره)؛ `/booking/[tourId]/review` (فریم ۲-۲)؛ `/me/reservations` (فریم ۲-۳ + فریم حالت خالی)؛ `/me/reservations/[id]` (فریم ۲-۴)
+- **Tests** — تست‌های پارسا
+
+### پارسا
+- **Backend** — Permission «مشتری فقط رزرو خودش»؛ تعلق گرفتن هر Reservation به آژانسِ صاحب تور
+- **Frontend** — `StatusTimeline` نسخه‌ی مشتری: چهار فاز فارسی طبق کامپوننت ۸، بدون هیچ نام انگلیسی
+- **Tests** — تست‌های مانی: تور Published با رزرو فعال در برابر ویرایش خطرناک محافظت شود
+
+### مانی
+- **Backend** — قفل کردن فیلدهای حساس تور (ظرفیت، تاریخ، قیمت) وقتی رزرو فعال دارد
+- **Frontend** — نمایش خلاصه‌ی تور داخل صفحات رزرو با استفاده‌ی مجدد از `TourCard`
+- **Tests** — تست‌های ایلیا: اعتبارسنجی مسافر، PENDING ظرفیت را کم نمی‌کند، Transition نامعتبر رد می‌شود، مشتری A رزرو مشتری B را نمی‌بیند
+
+---
+
+## مرحله ۷ — تأیید، پرداخت و ظرفیت
+
+**خروجی مرحله:** آژانس رزرو را Approve می‌کند، مشتری پرداخت Mock انجام می‌دهد، ظرفیت به‌اندازه‌ی تعداد مسافر و به‌صورت اتمیک کم می‌شود، و دو پرداخت هم‌زمان نمی‌توانند از ظرفیت عبور کنند.
+
+### ایلیا
+- **Backend** — `GET /agency/reservations`؛ `GET /agency/reservations/{id}`؛ `POST /agency/reservations/{id}/transition`؛ `POST /reservations/{id}/pay`؛ مدل `Payment`؛ `select_for_update` روی Tour؛ کسر `passengers.count()`؛ Rollback کامل در شکست
+- **Frontend** — `/me/payment/[id]` (فریم ۲-۵ + فریم نتیجه‌ی موفق)؛ `/app/reservations` (فریم ۳-۱ + فریم حالت خالی)؛ `/app/reservations/[id]` (فریم ۳-۲)؛ `/app/payments` (فریم ۵-۱)
+- **Tests** — تست‌های پارسا
+
+### پارسا
+- **Backend** — Permission Transition (فقط کارمند آژانسِ صاحب تور)؛ تصمیم `PAYMENT_EXPIRED` — چون Celery خارج از Scope است، انقضا به‌صورت بررسی تنبل در لحظه‌ی درخواست پرداخت انجام شود
+- **Frontend** — `StatusTimeline` نسخه‌ی آژانس: تاریخچه‌ی کامل با نام دقیق انگلیسی؛ `ConfirmDialog` برای Approve و Reject
+- **Tests** — تست‌های مانی: ظرفیت لحظه‌ای درست نمایش داده شود، تور پرشده دکمه‌ی رزرو Disabled داشته باشد
+
+### مانی
+- **Backend** — انعکاس `remaining_capacity` به‌روزشده در مارکت‌پلیس
+- **Frontend** — نمایش ظرفیت لحظه‌ای در `/tours/[id]` و Disable شدن دکمه رزرو
+- **Tests** — تست‌های ایلیا: پرداخت موفق ظرفیت را به‌اندازه‌ی تعداد مسافر کم کند، پرداخت ناموفق ظرفیت را دست‌نخورده بگذارد، دو پرداخت هم‌زمان Overbook نکنند، Rollback کار کند
+
+---
+
+## مرحله ۸ — چرخه سفر و تکمیل کنسول
+
+**خروجی مرحله:** رزرو از CONFIRMED تا COMPLETED پیش می‌رود و هر ۳۴ فریم وایرفریم پیاده‌سازی شده است.
+
+### ایلیا
+- **Backend** — Transitionهای `CONFIRMED → READY_FOR_TRAVEL → IN_PROGRESS → COMPLETED`؛ لغو رزرو پرداخت‌شده و آزادسازی ظرفیت؛ Endpointهای آمار داشبورد و گزارش
+- **Frontend** — `/app` داشبورد کامل (فریم ۴-۱)؛ `/app/customers` (۴-۲)؛ `/app/customers/[id]` (۴-۳)؛ `/app/reports` (۵-۲)
+- **Tests** — تست‌های پارسا
+
+### پارسا
+- **Backend** — `GET /organizations/current`؛ به‌روزرسانی سازمان؛ دعوت و مدیریت اعضا؛ `/me/profile`؛ نقش Platform Admin
+- **Frontend** — `/app/settings/organization` (۵-۳)؛ `/app/settings/members` (۵-۴)؛ `/me/profile` (۵-۵)؛ `/admin` (۵-۷)
+- **Tests** — تست‌های مانی: راهنما فقط تورهای اختصاص‌یافته به خودش را ببیند
+
+### مانی
+- **Backend** — اتصال `TourGuide` به یک `User` با نقش راهنما؛ Endpointهای `/guide` محدود به تورهای اختصاص‌یافته
+- **Frontend** — `/guide` (۶-۱)؛ `/guide/[tourId]` (۶-۲)؛ `/guide/profile` (۶-۳)
+- **Tests** — تست‌های ایلیا: چرخه‌ی کامل سفر تا COMPLETED، آزادسازی ظرفیت پس از لغو رزرو پرداخت‌شده
+
+---
+
+## 5.9 نقشه‌ی پوشش صفحات
+
+هر ۲۹ Route وایرفریم + ۲ Route بازاستفاده (هتل و حمل‌ونقل) = ۳۱ صفحه:
+
+| مرحله | مانی | پارسا | ایلیا |
+|---|---|---|---|
+| ۱ | Layoutها | bootstrap + توکن | ۱۲ کامپوننت پایه |
+| ۲ | حالت هدر/سایدبار | `/register` `/login` | لایه فرم |
+| ۳ | `/app/destinations` `/app/hotels` `/app/transportation` `/app/guides` | ConfirmDialog | Table کامل |
+| ۴ | `/app/tours` `/app/tours/[id]` | `/app` اسکلت | StatusBadge |
+| ۵ | `/` `/tours` `/tours/[id]` `/destinations` | TourCard | جستجو/فیلتر |
+| ۶ | خلاصه تور در رزرو | Timeline مشتری | `/booking/[tourId]` `+/review` `/me/reservations` `+/[id]` |
+| ۷ | ظرفیت لحظه‌ای | Timeline آژانس | `/me/payment/[id]` `/app/reservations` `+/[id]` `/app/payments` |
+| ۸ | `/guide` `/guide/[tourId]` `/guide/profile` | `/app/settings/organization` `+/members` `/me/profile` `/admin` | `/app` `/app/customers` `+/[id]` `/app/reports` |
 
 ---
 
@@ -721,9 +829,9 @@ Issue
 Branch:
 
 ```text
-feature/<issue>-<name>
-fix/<issue>-<name>
-test/<issue>-<name>
+feature/<issue>-<n>
+fix/<issue>-<n>
+test/<issue>-<n>
 ```
 
 `main`:

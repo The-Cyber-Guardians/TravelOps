@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0e0e10;}
+  *{box-sizing:border-box;}
+  doc-page{background:#0e0e10 !important;}
+  a{color:#e4c06a;text-decoration:none;}
+  a:hover{color:#f2d488;}
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page size="a4" orientation="landscape">
+
+<!-- ===================== PAGE 1 — COVER ===================== -->
+<section class="page" dir="rtl" lang="fa" data-screen-label="جلد" style="position:relative;overflow:hidden;background:radial-gradient(135% 125% at 80% -18%,#26262e 0%,#17171b 46%,#0f0f12 100%);color:#f3f1ea;font-family:Vazirmatn,system-ui,sans-serif;display:flex;flex-direction:column;padding:64px 72px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="display:block;width:38px;height:2px;background:#c9a24b;"></span>
+      <span style="font-size:15px;font-weight:600;letter-spacing:3px;color:#e4c06a;">آموزش حضوری · دیپلوی وب</span>
+    </div>
+    <span dir="ltr" style="font-size:15px;font-weight:500;color:#6c6c72;letter-spacing:2px;">۰۱ ⁄ ۰۵</span>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;">
+    <h1 style="margin:0;font-size:108px;font-weight:800;line-height:1.04;letter-spacing:-1px;">از <span dir="ltr" style="color:#e4c06a;">localhost</span><br>تا <span style="color:#e4c06a;">دامنه</span></h1>
+    <p style="margin:0;font-size:32px;font-weight:400;color:#a8a69e;">مسیر دیپلوی یک پروژه وب</p>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:22px;">
+    <div style="display:flex;align-items:center;gap:16px;flex-shrink:0;">
+      <span style="width:60px;height:60px;border-radius:15px;border:1.5px solid rgba(228,192,106,.5);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19.5h19"/><path d="M10 8.5 8 11l2 2.5M14 8.5l2 2.5-2 2.5"/></svg></span>
+      <span dir="ltr" style="font-size:19px;color:#a8a69e;font-weight:500;">localhost</span>
+    </div>
+    <div style="flex:1;height:2px;background:repeating-linear-gradient(to left,#514a39 0 9px,transparent 9px 18px);"></div>
+    <span style="color:#e4c06a;flex-shrink:0;display:flex;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></span>
+    <div style="display:flex;align-items:center;gap:16px;flex-shrink:0;">
+      <span dir="ltr" style="font-size:19px;color:#f3f1ea;font-weight:600;">manijesmani.ir</span>
+      <span style="width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#ecca79,#cfa049);display:grid;place-items:center;color:#1a1a1d;box-shadow:0 8px 26px rgba(228,192,106,.28);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGE 2 — ARCHITECTURE ===================== -->
+<section class="page" dir="rtl" lang="fa" data-screen-label="معماری" style="position:relative;overflow:hidden;background:radial-gradient(130% 130% at 82% -15%,#242429 0%,#17171b 48%,#0f0f12 100%);color:#f3f1ea;font-family:Vazirmatn,system-ui,sans-serif;display:flex;flex-direction:column;padding:44px 48px;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-size:14px;font-weight:600;letter-spacing:3px;color:#e4c06a;margin-bottom:8px;">معماری</div>
+      <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.5px;">مسیر یک درخواست</h2>
+    </div>
+    <span dir="ltr" style="font-size:15px;font-weight:500;color:#6c6c72;letter-spacing:2px;">۰۲ ⁄ ۰۵</span>
+  </div>
+
+  <div style="position:relative;width:1000px;height:590px;margin:12px auto 0;">
+    <svg viewBox="0 0 1000 590" style="position:absolute;inset:0;width:1000px;height:590px;overflow:visible;">
+      <defs><marker id="a2" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0L9 5L0 10z" fill="#e4c06a"/></marker></defs>
+      <line x1="904" y1="300" x2="840" y2="300" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+      <line x1="764" y1="300" x2="700" y2="300" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+      <line x1="624" y1="300" x2="560" y2="300" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+      <line x1="484" y1="300" x2="458" y2="300" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+      <path d="M348 300 C 304 300 300 150 281 150" fill="none" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+      <path d="M348 300 C 304 300 300 450 281 450" fill="none" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a2)"/>
+    </svg>
+
+    <!-- کاربر -->
+    <div style="position:absolute;left:880px;top:266px;width:120px;display:flex;flex-direction:column;align-items:center;gap:11px;">
+      <div style="width:68px;height:68px;border-radius:50%;border:1.5px solid rgba(228,192,106,.45);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 8px 22px rgba(0,0,0,.4);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18"/><circle cx="6.2" cy="6.5" r=".6" fill="currentColor" stroke="none"/><circle cx="8.6" cy="6.5" r=".6" fill="currentColor" stroke="none"/></svg></div>
+      <div style="text-align:center;"><div style="font-size:19px;font-weight:600;">کاربر</div><div style="font-size:12.5px;color:#8f8e88;margin-top:2px;">مرورگر</div></div>
+    </div>
+    <!-- دامنه -->
+    <div style="position:absolute;left:740px;top:266px;width:120px;display:flex;flex-direction:column;align-items:center;gap:11px;">
+      <div style="width:68px;height:68px;border-radius:50%;border:1.5px solid rgba(228,192,106,.45);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 8px 22px rgba(0,0,0,.4);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></svg></div>
+      <div style="text-align:center;"><div style="font-size:19px;font-weight:600;">دامنه</div><div dir="ltr" style="font-size:12.5px;color:#8f8e88;margin-top:2px;">manijesmani.ir</div></div>
+    </div>
+    <!-- DNS -->
+    <div style="position:absolute;left:600px;top:266px;width:120px;display:flex;flex-direction:column;align-items:center;gap:11px;">
+      <div style="width:68px;height:68px;border-radius:50%;border:1.5px solid rgba(228,192,106,.45);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 8px 22px rgba(0,0,0,.4);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v19"/><path d="M12 6H5.5L3 8.5 5.5 11H12"/><path d="M12 13h6.5L21 15.5 18.5 18H12"/></svg></div>
+      <div style="text-align:center;"><div dir="ltr" style="font-size:19px;font-weight:600;">DNS</div><div style="font-size:12.5px;color:#8f8e88;margin-top:2px;">سرور نام</div></div>
+    </div>
+    <!-- سرور -->
+    <div style="position:absolute;left:460px;top:266px;width:120px;display:flex;flex-direction:column;align-items:center;gap:11px;">
+      <div style="width:68px;height:68px;border-radius:50%;border:1.5px solid rgba(228,192,106,.45);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 8px 22px rgba(0,0,0,.4);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="6.5" rx="1.6"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="1.6"/><circle cx="7" cy="7.25" r=".7" fill="currentColor" stroke="none"/><circle cx="7" cy="16.75" r=".7" fill="currentColor" stroke="none"/><path d="M15 7.25h3M15 16.75h3"/></svg></div>
+      <div style="text-align:center;"><div style="font-size:19px;font-weight:600;">سرور</div><div dir="ltr" style="font-size:12.5px;color:#8f8e88;margin-top:2px;">IP</div></div>
+    </div>
+    <!-- Nginx hero -->
+    <div style="position:absolute;left:348px;top:248px;width:104px;height:104px;border-radius:24px;background:linear-gradient(150deg,#ecca79,#cfa049);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#1a1a1d;box-shadow:0 14px 40px rgba(228,192,106,.32),inset 0 1px 0 rgba(255,255,255,.45);"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h5.5"/><path d="M8.5 12C13 12 12 6.5 17 6.5"/><path d="M8.5 12C13 12 12 17.5 17 17.5"/><circle cx="18.5" cy="6.5" r="1.6" fill="currentColor"/><circle cx="18.5" cy="17.5" r="1.6" fill="currentColor"/><circle cx="4" cy="12" r="1.6" fill="currentColor"/></svg><div dir="ltr" style="font-size:16px;font-weight:700;letter-spacing:.5px;">Nginx</div></div>
+    <div style="position:absolute;left:340px;top:360px;width:120px;text-align:center;font-size:13px;color:#e4c06a;font-weight:600;">مسیریاب</div>
+
+    <!-- فرانت‌اند -->
+    <div style="position:absolute;left:25px;top:104px;width:256px;height:92px;border-radius:16px;background:#1c1c20;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:16px;padding:0 20px;box-shadow:0 10px 30px rgba(0,0,0,.38);">
+      <div style="width:46px;height:46px;border-radius:12px;background:#232329;display:grid;place-items:center;color:#e4c06a;flex-shrink:0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.7 13 8 14.7l1.7 1.7M14.3 13l1.7 1.7-1.7 1.7"/></svg></div>
+      <div><div style="font-size:19px;font-weight:600;">فایل‌های فرانت‌اند</div><div style="font-size:13px;color:#8f8e88;margin-top:2px;">فایل‌های استاتیک بیلد‌شده</div></div>
+    </div>
+    <!-- بک‌اند -->
+    <div style="position:absolute;left:25px;top:404px;width:256px;height:92px;border-radius:16px;background:#1c1c20;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:16px;padding:0 20px;box-shadow:0 10px 30px rgba(0,0,0,.38);">
+      <div style="width:46px;height:46px;border-radius:12px;background:#232329;display:grid;place-items:center;color:#e4c06a;flex-shrink:0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><path d="M13.5 15h4"/></svg></div>
+      <div><div style="font-size:19px;font-weight:600;">بک‌اند</div><div dir="ltr" style="font-size:13px;color:#8f8e88;margin-top:2px;">پورت 8000</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGE 3 — FLOWCHART ===================== -->
+<section class="page" dir="rtl" lang="fa" data-screen-label="هفت گام" style="position:relative;overflow:hidden;background:radial-gradient(130% 130% at 82% -15%,#242429 0%,#17171b 48%,#0f0f12 100%);color:#f3f1ea;font-family:Vazirmatn,system-ui,sans-serif;display:flex;flex-direction:column;padding:44px 48px;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-size:14px;font-weight:600;letter-spacing:3px;color:#e4c06a;margin-bottom:8px;">مرحله‌به‌مرحله</div>
+      <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.5px;">هفت گام تا انتشار</h2>
+    </div>
+    <span dir="ltr" style="font-size:15px;font-weight:500;color:#6c6c72;letter-spacing:2px;">۰۳ ⁄ ۰۵</span>
+  </div>
+
+  <div style="position:relative;width:1000px;height:540px;margin:8px auto 0;">
+    <svg viewBox="0 0 1000 540" style="position:absolute;inset:0;width:1000px;height:540px;overflow:visible;">
+      <defs><marker id="a3" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0L9 5L0 10z" fill="#e4c06a"/></marker></defs>
+      <line x1="774" y1="113" x2="752" y2="113" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="522" y1="113" x2="500" y2="113" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="270" y1="113" x2="248" y2="113" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="132" y1="220" x2="132" y2="316" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="248" y1="423" x2="270" y2="423" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="500" y1="423" x2="522" y2="423" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+      <line x1="752" y1="423" x2="774" y2="423" stroke="#c9a24b" stroke-width="2.2" marker-end="url(#a3)"/>
+    </svg>
+
+    <!-- 1 -->
+    <div style="position:absolute;left:776px;top:10px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۱</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19.5h19"/><path d="M10 8.5 8 11l2 2.5M14 8.5l2 2.5-2 2.5"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">آماده‌سازی محلی</div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">پروژه روی <span dir="ltr">localhost</span> اجرا می‌شود</div>
+    </div>
+    <!-- 2 -->
+    <div style="position:absolute;left:524px;top:10px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۲</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M2.5 4H5l2.2 11.2a1.5 1.5 0 0 0 1.5 1.2h8a1.5 1.5 0 0 0 1.5-1.2L20.5 8H6"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">خرید دامنه و سرور</div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">تهیهٔ دامنه و <span dir="ltr">VPS</span></div>
+    </div>
+    <!-- 3 -->
+    <div style="position:absolute;left:272px;top:10px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۳</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5l5-5"/><path d="M11.5 6.5l1.4-1.4a3.6 3.6 0 0 1 5.1 5.1L16.6 11.6"/><path d="M12.5 17.5l-1.4 1.4a3.6 3.6 0 0 1-5.1-5.1L7.4 12.4"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">اتصال دامنه</div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">رکورد <span dir="ltr">A</span> به <span dir="ltr">IP</span> سرور اشاره می‌کند</div>
+    </div>
+    <!-- 4 -->
+    <div style="position:absolute;left:20px;top:10px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۴</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><path d="M13.5 15h4"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">ورود با <span dir="ltr">SSH</span></div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">اتصال به سرور و انتقال پروژه</div>
+    </div>
+    <!-- 5 -->
+    <div style="position:absolute;left:20px;top:320px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۵</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z"/><path d="M3.5 7 12 11.5 20.5 7"/><path d="M12 11.5V21.5"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">بیلد و اجرا</div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">فرانت <span dir="ltr">build</span>، بک‌اند با <span dir="ltr">gunicorn</span></div>
+    </div>
+    <!-- 6 -->
+    <div style="position:absolute;left:272px;top:320px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۶</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3.2M12 18.3v3.2M21.5 12h-3.2M5.7 12H2.5M18.7 5.3l-2.3 2.3M7.6 16.4l-2.3 2.3M18.7 18.7l-2.3-2.3M7.6 7.6 5.3 5.3"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">نصب <span dir="ltr">Nginx</span></div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;">کانفیگ وب‌سرور و ریورس‌پروکسی</div>
+    </div>
+    <!-- 7 -->
+    <div style="position:absolute;left:524px;top:320px;width:224px;height:206px;border-radius:18px;background:#1b1b1f;border:1px solid rgba(255,255,255,.07);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div style="width:40px;height:40px;border-radius:50%;background:#e4c06a;color:#171719;display:grid;place-items:center;font-size:19px;font-weight:700;">۷</div><span style="color:#e4c06a;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3.2v5.6c0 4.8-3.2 8-7.5 9.4-4.3-1.4-7.5-4.6-7.5-9.4V5.7z"/><path d="M8.5 12l2.4 2.4L15.5 9.8"/></svg></span></div>
+      <div style="font-size:20px;font-weight:600;margin-top:18px;">گواهی <span dir="ltr">SSL</span></div>
+      <div style="font-size:14.5px;line-height:1.55;color:#9a988f;margin-top:8px;"><span dir="ltr">certbot</span> گواهی امن صادر می‌کند</div>
+    </div>
+    <!-- finish -->
+    <div style="position:absolute;left:776px;top:320px;width:224px;height:206px;border-radius:18px;background:linear-gradient(150deg,#262218,#1a1a1e);border:1px solid rgba(228,192,106,.35);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.4);display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:flex-start;"><div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,#8ee0a8,#4fb477);color:#0f2a1a;display:grid;place-items:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div></div>
+      <div style="font-size:21px;font-weight:700;margin-top:18px;">منتشر شد</div>
+      <div dir="ltr" style="font-size:14px;color:#e4c06a;margin-top:8px;">https://manijesmani.ir</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGE 4 — ROLES ===================== -->
+<section class="page" dir="rtl" lang="fa" data-screen-label="نقش‌ها" style="position:relative;overflow:hidden;background:radial-gradient(130% 130% at 82% -15%,#242429 0%,#17171b 48%,#0f0f12 100%);color:#f3f1ea;font-family:Vazirmatn,system-ui,sans-serif;display:flex;flex-direction:column;padding:52px 64px;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-size:14px;font-weight:600;letter-spacing:3px;color:#e4c06a;margin-bottom:8px;">مقایسه</div>
+      <h2 style="margin:0;font-size:40px;font-weight:700;letter-spacing:-.5px;">تفکیک نقش‌ها</h2>
+    </div>
+    <span dir="ltr" style="font-size:15px;font-weight:500;color:#6c6c72;letter-spacing:2px;">۰۴ ⁄ ۰۵</span>
+  </div>
+
+  <div style="flex:1;display:flex;align-items:stretch;margin-top:24px;">
+    <!-- DNS -->
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:26px;padding:20px 44px;">
+      <div style="width:92px;height:92px;border-radius:24px;border:1.5px solid rgba(228,192,106,.4);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 12px 34px rgba(0,0,0,.4);"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v19"/><path d="M12 6H5.5L3 8.5 5.5 11H12"/><path d="M12 13h6.5L21 15.5 18.5 18H12"/></svg></div>
+      <div>
+        <div style="font-size:14px;letter-spacing:3px;color:#8f8e88;font-weight:600;margin-bottom:12px;">دفترچهٔ تلفن اینترنت</div>
+        <div dir="ltr" style="font-size:54px;font-weight:800;color:#e4c06a;letter-spacing:1px;line-height:1;">DNS</div>
+      </div>
+      <div style="font-size:31px;font-weight:500;line-height:1.5;color:#f3f1ea;max-width:11ch;">«برو سراغ این کامپیوتر»</div>
+      <div style="display:flex;align-items:center;gap:12px;font-size:16px;color:#8f8e88;"><span>دامنه</span><span style="color:#c9a24b;display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"/></svg></span><span dir="ltr">IP</span></div>
+    </div>
+
+    <!-- divider -->
+    <div style="width:1px;background:linear-gradient(180deg,transparent,rgba(228,192,106,.35),transparent);position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;width:54px;height:54px;border-radius:50%;background:#141416;border:1px solid rgba(228,192,106,.3);display:grid;place-items:center;color:#e4c06a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></div>
+    </div>
+
+    <!-- Nginx -->
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:26px;padding:20px 44px;">
+      <div style="width:92px;height:92px;border-radius:24px;border:1.5px solid rgba(228,192,106,.4);background:#1b1b20;display:grid;place-items:center;color:#e4c06a;box-shadow:0 12px 34px rgba(0,0,0,.4);"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h5.5"/><path d="M8.5 12C13 12 12 6.5 17 6.5"/><path d="M8.5 12C13 12 12 17.5 17 17.5"/><circle cx="18.5" cy="6.5" r="1.6" fill="currentColor"/><circle cx="18.5" cy="17.5" r="1.6" fill="currentColor"/><circle cx="4" cy="12" r="1.6" fill="currentColor"/></svg></div>
+      <div>
+        <div style="font-size:14px;letter-spacing:3px;color:#8f8e88;font-weight:600;margin-bottom:12px;">دربان و مسیریاب سرور</div>
+        <div dir="ltr" style="font-size:54px;font-weight:800;color:#e4c06a;letter-spacing:1px;line-height:1;">Nginx</div>
+      </div>
+      <div style="font-size:31px;font-weight:500;line-height:1.5;color:#f3f1ea;max-width:12ch;">«حالا که رسیدی، این رو بگیر»</div>
+      <div style="display:flex;align-items:center;gap:12px;font-size:16px;color:#8f8e88;"><span>درخواست</span><span style="color:#c9a24b;display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"/></svg></span><span>پاسخ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGE 5 — RESULT ===================== -->
+<section class="page" dir="rtl" lang="fa" data-screen-label="نتیجه" style="position:relative;overflow:hidden;background:radial-gradient(135% 125% at 80% -18%,#26262e 0%,#17171b 46%,#0f0f12 100%);color:#f3f1ea;font-family:Vazirmatn,system-ui,sans-serif;display:flex;flex-direction:column;padding:44px 64px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="display:block;width:38px;height:2px;background:#c9a24b;"></span>
+      <span style="font-size:15px;font-weight:600;letter-spacing:3px;color:#e4c06a;">نتیجه</span>
+    </div>
+    <span dir="ltr" style="font-size:15px;font-weight:500;color:#6c6c72;letter-spacing:2px;">۰۵ ⁄ ۰۵</span>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;">
+    <h2 style="margin:0;font-size:46px;font-weight:700;letter-spacing:-.5px;">حالا <span style="color:#e4c06a;">آنلاین</span> است</h2>
+
+    <div style="width:840px;border-radius:16px;overflow:hidden;background:#1c1c20;border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 100px rgba(0,0,0,.55);">
+      <div dir="ltr" style="height:46px;background:#141416;display:flex;align-items:center;gap:16px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,.05);">
+        <div style="display:flex;gap:9px;"><span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840;"></span></div>
+        <div style="display:flex;align-items:center;gap:9px;background:#1c1c20;border-radius:9px 9px 0 0;padding:8px 16px;margin-bottom:-1px;"><span style="color:#e4c06a;display:flex;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></svg></span><span style="font-size:14px;color:#cfcdc6;">manijesmani.ir</span></div>
+      </div>
+      <div dir="ltr" style="height:60px;background:#1c1c20;display:flex;align-items:center;gap:16px;padding:0 18px;">
+        <div style="display:flex;gap:16px;color:#55555b;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 4v4h-4"/></svg></div>
+        <div style="flex:1;height:38px;border-radius:10px;background:#101012;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:10px;padding:0 16px;"><span style="color:#4fb477;display:flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span><span style="font-size:16px;color:#8f8e88;">https://</span><span style="font-size:16px;color:#f3f1ea;font-weight:500;">manijesmani.ir</span></div>
+        <span style="color:#55555b;display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span>
+      </div>
+      <div dir="rtl" style="height:250px;background:linear-gradient(180deg,#191920,#141418);padding:26px 30px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,#ecca79,#cfa049);"></span><span style="width:120px;height:12px;border-radius:6px;background:#33333a;"></span></div>
+          <div style="display:flex;gap:12px;align-items:center;"><span style="width:52px;height:9px;border-radius:5px;background:#2b2b31;"></span><span style="width:52px;height:9px;border-radius:5px;background:#2b2b31;"></span><span style="display:flex;align-items:center;gap:7px;background:rgba(79,180,119,.14);border:1px solid rgba(79,180,119,.4);border-radius:20px;padding:5px 12px;"><span style="width:8px;height:8px;border-radius:50%;background:#4fb477;"></span><span style="font-size:12px;color:#7fd7a1;font-weight:500;">آنلاین</span></span></div>
+        </div>
+        <div style="margin-top:38px;max-width:62%;">
+          <div style="width:100%;height:22px;border-radius:8px;background:#3a3a42;"></div>
+          <div style="width:68%;height:22px;border-radius:8px;background:#33333a;margin-top:12px;"></div>
+          <div style="width:92%;height:11px;border-radius:6px;background:#26262c;margin-top:22px;"></div>
+          <div style="width:80%;height:11px;border-radius:6px;background:#26262c;margin-top:10px;"></div>
+          <div style="width:150px;height:40px;border-radius:10px;background:linear-gradient(145deg,#ecca79,#cfa049);margin-top:24px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;color:#e4c06a;font-size:21px;font-weight:600;">
+      <span style="width:30px;height:30px;border-radius:50%;background:rgba(79,180,119,.16);border:1px solid rgba(79,180,119,.45);color:#4fb477;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+      <span>از <span dir="ltr">localhost</span> تا دامنه</span>
+    </div>
+  </div>
+</section>
+
+</doc-page>
+</x-dc>
+</body>
+</html>
