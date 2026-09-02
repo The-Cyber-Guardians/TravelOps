@@ -1,0 +1,62 @@
+.ui-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 160px;
+  padding: 24px;
+  text-align: center;
+}
+
+.ui-state__spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-gray-200);
+  border-top-color: var(--color-gray-900);
+  border-radius: 50%;
+  animation: ui-state-spin 700ms linear infinite;
+}
+
+.ui-state__title {
+  margin: 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.ui-state__message {
+  margin: 0;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-sm);
+}
+
+.ui-state__action {
+  min-height: 36px;
+  padding: 0 12px;
+  border: var(--border-width) solid var(--color-gray-300);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.ui-state__action:hover {
+  background: var(--color-gray-100);
+}
+
+.ui-state__action:focus-visible {
+  outline: 2px solid var(--color-gray-900);
+  outline-offset: 2px;
+}
+
+.ui-state__action-wrapper {
+  margin-top: 4px;
+}
+
+@keyframes ui-state-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
